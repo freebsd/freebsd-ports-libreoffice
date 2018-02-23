@@ -108,7 +108,7 @@ USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_QT4=	# empty but required
 USE_XORG=	xaw xrandr
-USES=		autoreconf:build bison compiler:c++11-lib cpe gmake jpeg \
+USES=		autoreconf:build bison compiler:c++14-lang cpe gmake jpeg \
 		perl5 pkgconfig python shebangfix shared-mime-info tar:xz
 
 OPTIONS_DEFINE=	CUPS GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
