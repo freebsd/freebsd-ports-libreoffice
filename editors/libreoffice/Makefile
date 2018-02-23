@@ -93,8 +93,6 @@ NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
 MASTER_SITES+=	http://dev-builds.libreoffice.org/pre-releases/src/
 .endif
 
-CONFLICTS_INSTALL=	libreoffice4-4.*
-
 INSTALL_TARGET=	distro-pack-install
 WRKSRC=		${WRKDIR}/${PORTNAME}-${LOVERSION}
 
