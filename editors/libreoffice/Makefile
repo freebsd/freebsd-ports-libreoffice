@@ -270,8 +270,6 @@ MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	DISPLAY=
 MAKE_ENV+=	verbose=1
 
-_MAKE_JOBS=	#
-
 .include <bsd.port.pre.mk>
 
 .if ${OPSYS} == FreeBSD
