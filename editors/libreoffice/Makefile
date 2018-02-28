@@ -109,10 +109,10 @@ USES=		autoreconf:build bison compiler:c++14-lang cpe gmake jpeg \
 
 OPTIONS_DEFINE=	CUPS GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
 		TEST WEBDAV
-OPTIONS_DEFAULT=	CUPS GTK3 MMEDIA
+OPTIONS_DEFAULT=	CUPS GTK2 MMEDIA
 
 GTK2_DESC=	GTK+ 2 GUI toolkit support
-GTK3_DESC=	GTK+ 3 GUI toolkit support
+GTK3_DESC=	GTK+ 3 GUI toolkit support (experimental)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
 MMEDIA_DESC=	Enable multimedia backend for Impress
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
@@ -125,7 +125,7 @@ CUPS_CONFIGURE_ENABLE=	cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
 GNOME_CONFIGURE_ENABLE=	dbus dconf
-GNOME_IMPLIES=	GTK3
+GNOME_IMPLIES=	GTK2
 GNOME_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 GNOME_USE=	GNOME=dconf
 
