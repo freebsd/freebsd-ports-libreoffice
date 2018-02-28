@@ -33,6 +33,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libcppunit.so:devel/cppunit \
 		libcurl.so:ftp/curl \
 		libcairo.so:graphics/cairo \
+		libepoxy.so:graphics/libepoxy \
 		libgraphite2.so:graphics/graphite2 \
 		liblcms2.so:graphics/lcms2 \
 		libcdr-0.1.so:graphics/libcdr01 \
