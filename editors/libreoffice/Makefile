@@ -27,16 +27,16 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		gsed:textproc/gsed
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
+		libcppunit.so:devel/cppunit \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
 		liborcus-0.13.so:devel/liborcus \
-		libcppunit.so:devel/cppunit \
 		libcurl.so:ftp/curl \
 		libcairo.so:graphics/cairo \
-		libepoxy.so:graphics/libepoxy \
 		libgraphite2.so:graphics/graphite2 \
 		liblcms2.so:graphics/lcms2 \
 		libcdr-0.1.so:graphics/libcdr01 \
+		libepoxy.so:graphics/libepoxy \
 		libetonyek-0.1.so:graphics/libetonyek01 \
 		libfreehand-0.1.so:graphics/libfreehand \
 		libgltf-0.0.so:graphics/libgltf \
@@ -53,26 +53,26 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libmspub-0.1.so:print/libmspub01 \
 		libpagemaker-0.0.so:print/libpagemaker \
 		libnss3.so:security/nss \
+		libxmlsec1-nss.so:security/xmlsec1 \
 		libclucene-core.so:textproc/clucene \
 		libexpat.so:textproc/expat2 \
 		libhunspell-1.6.so:textproc/hunspell \
 		libhyphen.so:textproc/hyphen \
 		libabw-0.1.so:textproc/libabw \
 		libe-book-0.1.so:textproc/libe-book \
+		libepubgen-0.1.so:textproc/libepubgen \
 		libexttextcat-2.0.so:textproc/libexttextcat \
 		libmwaw-0.3.so:textproc/libmwaw03 \
 		libodfgen-0.1.so:textproc/libodfgen01 \
-		libepubgen-0.1.so:textproc/libepubgen \
+		libqxp-0.0.so:textproc/libqxp \
 		librevenge-0.0.so:textproc/librevenge \
 		libstaroffice-0.0.so:textproc/libstaroffice \
 		libvisio-0.1.so:textproc/libvisio01 \
 		libwpd-0.10.so:textproc/libwpd010 \
 		libwps-0.4.so:textproc/libwps \
 		libxml2.so:textproc/libxml2 \
-		libxmlsec1-nss.so:security/xmlsec1 \
 		libxslt.so:textproc/libxslt \
 		libmythes-1.2.so:textproc/mythes \
-		libqxp-0.0.so:textproc/libqxp \
 		librdf.so:textproc/redland \
 		libserf-1.so:www/serf
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
