@@ -15,6 +15,7 @@ COMMENT=	Full integrated office productivity suite
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		zip:archivers/zip \
 		${LOCALBASE}/include/sqlext.h:databases/unixODBC \
+		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		${LOCALBASE}/bin/gperf:devel/gperf \
 		${LOCALBASE}/include/mdds-1.2/mdds/global.hpp:devel/mdds \
@@ -27,7 +28,6 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		gsed:textproc/gsed
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
-		libcppunit.so:devel/cppunit \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
 		liborcus-0.13.so:devel/liborcus \
