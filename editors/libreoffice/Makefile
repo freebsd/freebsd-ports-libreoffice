@@ -107,7 +107,7 @@ USE_XORG=	xaw xrandr
 USES=		autoreconf:build bison compiler:c++14-lang cpe gmake jpeg \
 		perl5 pkgconfig python shebangfix shared-mime-info tar:xz
 
-OPTIONS_DEFINE=	CUPS GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
+OPTIONS_DEFINE=	CUPS DOCS GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
 		TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS GTK2 MMEDIA
 
@@ -123,6 +123,8 @@ WEBDAV_DESC=	Enable WebDAV protocol
 
 CUPS_CONFIGURE_ENABLE=	cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
+
+DOCS_CONFIGURE_WITH=	help
 
 GNOME_CONFIGURE_ENABLE=	dbus dconf
 GNOME_IMPLIES=	GTK2
