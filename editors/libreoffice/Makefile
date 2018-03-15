@@ -30,7 +30,9 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
+		libltdl.so:devel/libltdl \
 		liborcus-0.13.so:devel/liborcus \
+		libplds4.so:devel/nspr \
 		libcurl.so:ftp/curl \
 		libcairo.so:graphics/cairo \
 		libgraphite2.so:graphics/graphite2 \
@@ -48,6 +50,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libCoinMP.so:math/coinmp \
 		liblpsolve55.so:math/lp_solve \
 		libcmis-0.5.so:net/libcmis \
+		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libmspub-0.1.so:print/libmspub01 \
@@ -73,7 +76,9 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libxml2.so:textproc/libxml2 \
 		libxslt.so:textproc/libxslt \
 		libmythes-1.2.so:textproc/mythes \
+		libraptor2.so:textproc/raptor2 \
 		librdf.so:textproc/redland \
+		libfontconfig.so:x11-fonts/fontconfig \
 		libserf-1.so:www/serf
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
@@ -103,7 +108,7 @@ USE_GL=		gl glew glu
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_QT4=	# empty but required
-USE_XORG=	xaw xrandr
+USE_XORG=	ice sm x11 xaw xext xinerama xrandr xrender
 USES=		autoreconf:build bison compiler:c++14-lang cpe gmake jpeg \
 		perl5 pkgconfig python shebangfix shared-mime-info tar:xz
 
