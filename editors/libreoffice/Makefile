@@ -110,7 +110,7 @@ USE_PERL5=	build
 USE_QT4=	# empty but required
 USE_XORG=	ice sm x11 xaw xext xinerama xrandr xrender
 USES=		autoreconf:build bison compiler:c++14-lang cpe gmake jpeg \
-		perl5 pkgconfig python shebangfix shared-mime-info tar:xz
+		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz
 
 OPTIONS_DEFINE=	CUPS DOCS GNOME GTK2 GTK3 JAVA KDE4 MMEDIA PGSQL SDK SYSTRAY \
 		TEST WEBDAV
