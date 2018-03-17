@@ -1,4 +1,4 @@
-# $FreeBSD: head/editors/libreoffice-hi/Makefile 397662 2015-09-23 21:06:12Z jkim $
+# $FreeBSD$
 
 LO_I18N=	hsb
 
