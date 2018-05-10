@@ -1,4 +1,4 @@
-# $FreeBSD: head/editors/libreoffice/Makefile.common 467711 2018-04-18 13:57:42Z jbeich $
+# $FreeBSD: head/editors/libreoffice/Makefile.common 469498 2018-05-10 03:40:37Z lwhsu $
 
 PORTNAME=	libreoffice
 PORTVERSION=	6.0.4
