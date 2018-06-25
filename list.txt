@@ -30,6 +30,7 @@ editors/libreoffice-et
 editors/libreoffice-eu
 editors/libreoffice-fa
 editors/libreoffice-fi
+editors/libreoffice-fy
 editors/libreoffice-ga
 editors/libreoffice-gd
 editors/libreoffice-gl
