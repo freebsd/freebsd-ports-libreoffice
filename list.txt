@@ -1,7 +1,6 @@
 arabic/libreoffice
 chinese/libreoffice-zh_CN
 chinese/libreoffice-zh_TW
-editors/libreoffice
 editors/libreoffice-af
 editors/libreoffice-am
 editors/libreoffice-as
@@ -39,7 +38,6 @@ editors/libreoffice-gug
 editors/libreoffice-hi
 editors/libreoffice-hr
 editors/libreoffice-hsb
-editors/libreoffice-i18n
 editors/libreoffice-id
 editors/libreoffice-is
 editors/libreoffice-it
