@@ -95,7 +95,7 @@ NOT_FOR_ARCHS=		aarch64 armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
 
 .if defined(PRERELEASE)
-MASTER_SITES+=	http://dev-builds.libreoffice.org/pre-releases/src/
+MASTER_SITES+=	https://dev-builds.libreoffice.org/pre-releases/src/
 .endif
 
 INSTALL_TARGET=	distro-pack-install

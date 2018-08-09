@@ -1,8 +1,8 @@
-TIMESTAMP = 1533212194
-SHA256 (libreoffice/libreoffice-6.0.6.2.tar.xz) = f1666430abf616a3813e4c886b51f157366f592102ae0e874abc17f3d58c6a8e
-SIZE (libreoffice/libreoffice-6.0.6.2.tar.xz) = 205022916
-SHA256 (libreoffice/libreoffice-help-6.0.6.2.tar.xz) = 7e49f0dc0e7fd8e2628939833063d60e6c92bdec019226037446595c87eee85e
-SIZE (libreoffice/libreoffice-help-6.0.6.2.tar.xz) = 2972748
+TIMESTAMP = 1533847397
+SHA256 (libreoffice/libreoffice-6.1.0.3.tar.xz) = 54eccd268f75d62fa6ab78d25685719c109257e1c0f4d628eae92ec09632ebd8
+SIZE (libreoffice/libreoffice-6.1.0.3.tar.xz) = 206818588
+SHA256 (libreoffice/libreoffice-help-6.1.0.3.tar.xz) = bbc5ccdba93ab8a2e792311a6b5e84f160882ef4048eff46ecdfc31d0bd5da2b
+SIZE (libreoffice/libreoffice-help-6.1.0.3.tar.xz) = 15754176
 SHA256 (libreoffice/4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2) = b0adb8e71aef80751b999c9c055e419a625c4a05184e407aef2aee28752ad8cb
 SIZE (libreoffice/4b87018f7fff1d054939d19920b751a0-collada2gltf-master-cb1d97788a.tar.bz2) = 555291
 SHA256 (libreoffice/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip) = d30b13f4ba2e3b6a2d4f020c0dee0a9fb9fc6fbcc2d561f36b78da4bf3802370
