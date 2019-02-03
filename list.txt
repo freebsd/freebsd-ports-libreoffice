@@ -20,6 +20,7 @@ editors/libreoffice-cs
 editors/libreoffice-cy
 editors/libreoffice-da
 editors/libreoffice-dgo
+editors/libreoffice-dsb
 editors/libreoffice-dz
 editors/libreoffice-el
 editors/libreoffice-en_GB
