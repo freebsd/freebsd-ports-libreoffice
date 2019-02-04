@@ -5,7 +5,7 @@
      aDetails.append( "; " );
  
 -#if (defined LINUX || defined _WIN32 || defined MACOSX)
-+#if (defined LINUX || defined _WIN32 || defined MACOSX || defined __FreeBSD__)
++#if (defined LINUX || defined _WIN32 || defined MACOSX || defined FREEBSD)
      aDetails.append( SV_APP_VCLBACKEND );
      aDetails.append( GetToolkitName() );
      aDetails.append( "; " );
