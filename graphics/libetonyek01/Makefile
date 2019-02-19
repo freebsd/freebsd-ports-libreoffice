@@ -2,6 +2,7 @@
 
 PORTNAME=	libetonyek
 PORTVERSION=	0.1.9
+PORTREVISION=	1
 PORTEPOCH=	1
 CATEGORIES=	graphics
 MASTER_SITES=	LODEV/${PORTNAME}
@@ -20,12 +21,13 @@ LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs \
 		liblangtag.so:devel/liblangtag \
 		libxml2.so:textproc/libxml2
 
+USES=		compiler:c++11-lib gmake libtool pathfix \
+		pkgconfig tar:xz
+
 CONFIGURE_ARGS=	--disable-tests --disable-werror --without-docs --with-mdds=1.4
 CPPFLAGS+=	-I${LOCALBASE}/include
 
 GNU_CONFIGURE=	yes
-USES=		compiler:c++11-lib gmake libtool pathfix \
-		pkgconfig tar:xz
 USE_LDCONFIG=	yes
 INSTALL_TARGET=	install-strip
 
