@@ -1,5 +1,6 @@
 devel/liborcus
 devel/mdds
+graphics/libetonyek01
 
 arabic/libreoffice
 editors/libreoffice
