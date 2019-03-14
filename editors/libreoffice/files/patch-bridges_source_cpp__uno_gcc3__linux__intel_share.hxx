@@ -1,3 +1,7 @@
+LLVM doesn't handle RTTI in the same way as an LSB implementation, but
+LibreOffice expects to use it in that way.  Define a couple of necessary
+functions locally to allow that to happen.
+
 --- bridges/source/cpp_uno/gcc3_linux_intel/share.hxx.orig	2019-02-13 06:11:36.000000000 +0800
 +++ bridges/source/cpp_uno/gcc3_linux_intel/share.hxx	2019-03-01 23:28:17.003752000 +0800
 @@ -33,6 +33,33 @@

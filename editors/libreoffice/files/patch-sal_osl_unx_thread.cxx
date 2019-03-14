@@ -1,3 +1,7 @@
+osl_thread_priority_init_Impl() tries to assign values to variables
+declared as const on platforms not excluded by NO_PTHREAD_PRIORITY.
+This includes FreeBSD.  Patch locally until fixed upstream.
+
 --- sal/osl/unx/thread.cxx.orig	2019-02-12 22:11:36.000000000 +0000
 +++ sal/osl/unx/thread.cxx	2019-02-18 23:03:57.933036000 +0000
 @@ -46,6 +46,10 @@
