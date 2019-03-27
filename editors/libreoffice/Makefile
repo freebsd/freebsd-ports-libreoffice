@@ -326,6 +326,9 @@ post-install-SDK-on:
 	${FIND} -s ${subdir}/libreoffice -not -type d >> ${TMPPLIST}
 .endfor
 
+post-install-GTK3-on:
+	@${ECHO_CMD} "share/gir-1.0/LOKDocView-0.1.gir" >> ${TMPPLIST}
+
 add-plist-gnome:
 .for subdir in gnome hicolor locolor
 	@${ECHO_CMD} "@rmtry share/icons/${subdir}/icon-theme.cache" >> ${TMPPLIST}
