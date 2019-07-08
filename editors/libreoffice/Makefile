@@ -1,4 +1,4 @@
-# $FreeBSD: head/editors/libreoffice/Makefile 505331 2019-06-29 08:55:17Z tcberner $
+# $FreeBSD: head/editors/libreoffice/Makefile 506201 2019-07-08 04:13:37Z lwhsu $
 
 .include "${.CURDIR}/Makefile.common"
 
