@@ -1,3 +1,5 @@
+devel/gperf31
+
 arabic/libreoffice
 editors/libreoffice
 chinese/libreoffice-zh_CN
