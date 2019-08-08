@@ -1,4 +1,5 @@
 devel/gperf31
+net/libcmis
 
 arabic/libreoffice
 editors/libreoffice
