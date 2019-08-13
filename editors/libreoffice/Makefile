@@ -17,7 +17,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		${LOCALBASE}/include/sqlext.h:databases/unixODBC \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
-		${LOCALBASE}/bin/gperf:devel/gperf \
+		${LOCALBASE}/bin/gperf:devel/gperf31 \
 		mdds>=1.4:devel/mdds \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
