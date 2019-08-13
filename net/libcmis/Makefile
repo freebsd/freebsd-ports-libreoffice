@@ -15,9 +15,11 @@ BROKEN_sparc64=	cannot link with boost
 
 BUILD_DEPENDS=	cppunit-config:devel/cppunit \
 		${LOCALBASE}/lib/libboost_regex.a:devel/boost-libs
-LIB_DEPENDS=	libcurl.so:ftp/curl
+LIB_DEPENDS=	libboost_program_options.so:devel/boost-libs \
+		libcurl.so:ftp/curl
 
-USES=		compiler:c++11-lib gmake gnome libtool pathfix pkgconfig
+USES=		compiler:c++11-lib gmake gnome libtool localbase pathfix \
+		pkgconfig
 USE_GNOME=	libxml2
 
 CONFIGURE_ARGS=	--disable-werror --with-boost=${LOCALBASE} --without-man
