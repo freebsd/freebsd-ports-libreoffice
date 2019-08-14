@@ -267,6 +267,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--without-myspell-dicts
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
+		FLEX=${LOCALBASE}/bin/flex \
 		GNUTAR="${TAR}" \
 		GPERF=${LOCALBASE}/bin/gperf \
 		ICU_CFLAGS="`icu-config --cflags`" \
