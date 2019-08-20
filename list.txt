@@ -1,5 +1,3 @@
-net/libcmis
-
 arabic/libreoffice
 editors/libreoffice
 chinese/libreoffice-zh_CN
