@@ -33,7 +33,7 @@ EXTRACT_AFTER_ARGS=	--exclude '${PORTNAME}*-dict-*.deb' \
 post-extract:
 	@${MKDIR} ${WRKSRC}
 	for deb in ${WRKDIR}/DEBS/*.deb ; do \
-		${TAR} xfO $${deb} data.tar.gz | ${TAR} -C ${WRKSRC} -xf - ; \
+		${TAR} xfO $${deb} data.tar.xz | ${TAR} -C ${WRKSRC} -xf - ; \
 	done
 
 do-install:
