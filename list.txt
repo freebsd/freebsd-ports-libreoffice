@@ -89,6 +89,7 @@ editors/libreoffice-ss
 editors/libreoffice-st
 editors/libreoffice-sv
 editors/libreoffice-sw_TZ
+editors/libreoffice-szl
 editors/libreoffice-ta
 editors/libreoffice-te
 editors/libreoffice-tg
