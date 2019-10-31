@@ -10,7 +10,8 @@ cd /usr
 #ls -al ports
 mv ports ports.old
 #svnlite co svn://svn.freebsd.org/ports/head ports
-portsnap --interactive fetch extract
+#portsnap --interactive fetch extract
+git clone --depth=1 --single-branch -b master https://github.com/freebsd/freebsd-ports.git ports
 
 cd ${CIRRUS_WORKING_DIR}
 for p in `cat list.txt`
