@@ -14,6 +14,6 @@ task:
   install_script:
     - sed -i.bak -e 's,pkg+http://pkg.FreeBSD.org/\${ABI}/quarterly,pkg+http://pkg.FreeBSD.org/\${ABI}/latest,' /etc/pkg/FreeBSD.conf
     #- pkg upgrade -y
-    - pkg install -y poudriere
+    - pkg install -y poudriere git
   script:
     - ./porttest.sh
