@@ -1,3 +1,4 @@
+devel/liborcus
 devel/mdds
 
 arabic/libreoffice
