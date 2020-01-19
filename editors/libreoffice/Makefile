@@ -48,6 +48,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libGeneratedSaxParser.so:graphics/opencollada \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
+		libqrcodegencpp.so:graphics/qr-code-generator \
 		libCoinMP.so:math/coinmp \
 		liblpsolve55.so:math/lp_solve \
 		libcmis-0.5.so:net/libcmis \
