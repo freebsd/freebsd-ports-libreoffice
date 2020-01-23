@@ -55,3 +55,10 @@ mv pkgs/All /usr/local/poudriere/data/packages/jail-default/.latest/
 rm -fr pkgs
 
 poudriere testport -j jail ${PORT}
+
+ls -1 /usr/local/poudriere/data/logs/bulk/jail-default/latest/logs/errors
+for i in /usr/local/poudriere/data/logs/bulk/jail-default/latest/logs/errors/*.log
+do
+	echo ==== $i ====
+	cat $i
+done
