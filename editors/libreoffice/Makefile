@@ -117,12 +117,11 @@ USES=		autoreconf:build bison compiler:c++14-lang cpe gl gmake gnome \
 		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz \
 		xorg
 
-OPTIONS_DEFINE=	CUPS DOCS GNOME GTK2 GTK3 JAVA KDE5 MMEDIA PGSQL QT5 SDK \
+OPTIONS_DEFINE=	CUPS DOCS GNOME GTK3 JAVA KDE5 MMEDIA PGSQL QT5 SDK \
 		SYSTRAY TEST WEBDAV
-OPTIONS_DEFAULT=	CUPS GTK2 MMEDIA
+OPTIONS_DEFAULT=	CUPS GTK3 MMEDIA
 
-GTK2_DESC=	GTK+ 2 GUI toolkit support
-GTK3_DESC=	GTK+ 3 GUI toolkit support (experimental)
+GTK3_DESC=	GTK+ 3 GUI toolkit support
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
 KDE5_DESC=	KF5/Qt5 GUI toolkit support (require QT5)
 MMEDIA_DESC=	Enable multimedia backend for Impress
@@ -139,18 +138,13 @@ CUPS_LIB_DEPENDS=	libcups.so:print/cups
 DOCS_CONFIGURE_WITH=	help
 
 GNOME_CONFIGURE_ENABLE=	dbus dconf
-GNOME_IMPLIES=	GTK2
+GNOME_IMPLIES=	GTK3
 GNOME_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 GNOME_USE=	GNOME=dconf
 
 GTK_USE_GNOME=	gtk-update-icon-cache
 GTK_USES=	desktop-file-utils
 GTK_VARS=	POST_PLIST=add-plist-gnome
-
-GTK2_CONFIGURE_ENABLE=	gtk
-GTK2_USE=	GNOME=gtk20,${GTK_USE_GNOME}
-GTK2_USES=	${GTK_USES}
-GTK2_VARS=	${GTK_VARS}
 
 GTK3_CONFIGURE_ENABLE=	gtk3
 GTK3_USE=	GNOME=gtk30,${GTK_USE_GNOME}
