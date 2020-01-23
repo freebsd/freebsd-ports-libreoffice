@@ -158,8 +158,8 @@ GTK3_USES=	${GTK_USES}
 GTK3_VARS=	${GTK_VARS}
 
 JAVA_BUILD_DEPENDS=	ant:devel/apache-ant \
-			${JAVAJARDIR}/commons-codec.jar:java/jakarta-commons-codec \
-			${JAVAJARDIR}/commons-httpclient.jar:java/jakarta-commons-httpclient \
+			${JAVAJARDIR}/commons-codec.jar:java/apache-commons-codec \
+			${JAVAJARDIR}/commons-httpclient.jar:java/apache-commons-httpclient \
 			${JAVAJARDIR}/commons-lang.jar:java/apache-commons-lang \
 			${JAVAJARDIR}/commons-logging.jar:java/apache-commons-logging \
 			${JAVAJARDIR}/junit.jar:java/junit \
@@ -271,6 +271,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		FLEX=${LOCALBASE}/bin/flex \
 		GNUTAR="${TAR}" \
+		GPERF=${LOCALBASE}/bin/gperf \
 		ICU_CFLAGS="`icu-config --cflags`" \
 		ICU_LIBS="`icu-config --ldflags`" \
 		OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \
