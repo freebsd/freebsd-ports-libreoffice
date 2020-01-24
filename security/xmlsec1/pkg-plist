@@ -1,6 +1,5 @@
 bin/xmlsec1
 bin/xmlsec1-config
-%%ETCDIR%%Conf.sh
 include/xmlsec1/xmlsec/app.h
 include/xmlsec1/xmlsec/base64.h
 include/xmlsec1/xmlsec/bn.h
@@ -49,6 +48,7 @@ include/xmlsec1/xmlsec/xmldsig.h
 include/xmlsec1/xmlsec/xmlenc.h
 include/xmlsec1/xmlsec/xmlsec.h
 include/xmlsec1/xmlsec/xmltree.h
+lib/xmlsec1Conf.sh
 lib/libxmlsec1-gcrypt.a
 lib/libxmlsec1-gcrypt.so
 lib/libxmlsec1-gcrypt.so.1
