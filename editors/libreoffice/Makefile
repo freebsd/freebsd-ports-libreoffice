@@ -10,7 +10,7 @@ DISTFILES=	${PORTNAME}-${LOVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	libreoffice
 EXTRACT_ONLY:=	${DISTFILES}
 
-EXTRA_PATCHES=	9065cd8d9a19864f6b618f2dc10daf577badd9ee.patch:-p1
+EXTRA_PATCHES=	${FILESDIR}/9065cd8d9a19864f6b618f2dc10daf577badd9ee.patch:-p1
 
 COMMENT=	Full integrated office productivity suite
 
