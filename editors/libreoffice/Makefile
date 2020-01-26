@@ -120,7 +120,7 @@ USES=		autoreconf:build bison compiler:c++14-lang cpe gl gmake gnome \
 		xorg
 
 OPTIONS_DEFINE=	CUPS DOCS GNOME GTK3 JAVA KDE5 MMEDIA PGSQL QT5 SDK \
-		SYSTRAY TEST WEBDAV
+		TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS GTK3 MMEDIA
 
 GTK3_DESC=	GTK+ 3 GUI toolkit support
@@ -130,7 +130,6 @@ MMEDIA_DESC=	Enable multimedia backend for Impress
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 QT5_DESC=	Qt5 GUI toolkit support
 SDK_DESC=	Build with SDK
-SYSTRAY_DESC=	Enable systemtray quickstarter
 TEST_DESC=	Run all regression tests
 WEBDAV_DESC=	Enable WebDAV protocol
 
@@ -215,8 +214,6 @@ SDK_CONFIGURE_OFF=	--without-doxygen
 SDK_CONFIGURE_ON=	--with-doxygen=${LOCALBASE}/bin/doxygen
 SDK_DISTFILES=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:ext
 
-SYSTRAY_CONFIGURE_ENABLE=	systray
-
 TEST_ALL_TARGET_OFF=	build-nocheck
 TEST_CONFIGURE_ENABLE=	cve-tests
 
@@ -243,7 +240,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-release-build \
 		--disable-pdfium \
 		--exec-prefix=${PREFIX} \
-		--with-alloc=system \
 		--with-boost=${LOCALBASE} \
 		--with-build-version="FreeBSD ports ${PKGVERSION}" \
 		--with-external-dict-dir=${LOCALBASE}/share/hunspell \
