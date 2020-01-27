@@ -119,13 +119,13 @@ USES=		autoreconf:build bison compiler:c++14-lang cpe gl gmake gnome \
 		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz \
 		xorg
 
-OPTIONS_DEFINE=	CUPS DOCS GNOME GTK3 JAVA KDE5 MMEDIA PGSQL QT5 SDK \
+OPTIONS_DEFINE=	CUPS DOCS GNOME GTK3 JAVA KF5 MMEDIA PGSQL QT5 SDK \
 		TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS GTK3 MMEDIA
 
 GTK3_DESC=	GTK+ 3 GUI toolkit support
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
-KDE5_DESC=	KF5/Qt5 GUI toolkit support (require QT5)
+KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 MMEDIA_DESC=	Enable multimedia backend for Impress
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 QT5_DESC=	Qt5 GUI toolkit support
@@ -192,10 +192,10 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 JAVA_USE=	JAVA=yes
 JAVA_VARS=	JAVA_BUILD=yes
 
-KDE5_CONFIGURE_ENABLE=	kde5
-KDE5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
-KDE5_USES=	kde:5
-KDE5_IMPLIES=	QT5
+kf5_CONFIGURE_ENABLE=	kf5
+kf5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
+kf5_USES=	kde:5
+kf5_IMPLIES=	QT5
 
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 MMEDIA_USE=	GSTREAMER1=yes
