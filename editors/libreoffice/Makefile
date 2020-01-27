@@ -192,10 +192,10 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 JAVA_USE=	JAVA=yes
 JAVA_VARS=	JAVA_BUILD=yes
 
-kf5_CONFIGURE_ENABLE=	kf5
-kf5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
-kf5_USES=	kde:5
-kf5_IMPLIES=	QT5
+KF5_CONFIGURE_ENABLE=	kf5
+KF5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
+KF5_USES=	kde:5
+KF5_IMPLIES=	QT5
 
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 MMEDIA_USE=	GSTREAMER1=yes
