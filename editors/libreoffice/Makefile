@@ -47,7 +47,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libgltf-0.0.so:graphics/libgltf \
 		libwpg-0.3.so:graphics/libwpg03 \
 		libzmf-0.0.so:graphics/libzmf \
-		libGeneratedSaxParser.so:graphics/opencollada \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
 		libqrcodegencpp.so:graphics/qr-code-generator \
@@ -223,12 +222,6 @@ WEBDAV_LIB_DEPENDS=	libneon.so:www/neon
 CPPFLAGS+=	-isystem ${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-COLLADA_MODS=	COLLADABaseUtils COLLADAFramework \
-		COLLADASaxFrameworkLoader GeneratedSaxParser
-COLLADA_CFLAGS=	${COLLADA_MODS:S|^|-isystem ${LOCALBASE}/include/opencollada/|}
-COLLADA_LIBS=	-L${LOCALBASE}/lib/opencollada \
-		${COLLADA_MODS:S|^COLLADA|OpenCOLLADA|:S|^|-l|}
-
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-epm \
 		--disable-fetch-external \
@@ -253,7 +246,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-dicts \
 		--with-system-libs \
 		--with-system-libxml \
-		--with-system-opencollada \
 		--with-system-ucpp \
 		--with-system-zlib \
 		--with-vendor="FreeBSD ports" \
@@ -266,8 +258,6 @@ CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		GPERF=${LOCALBASE}/bin/gperf \
 		ICU_CFLAGS="`icu-config --cflags`" \
 		ICU_LIBS="`icu-config --ldflags`" \
-		OPENCOLLADA_CFLAGS="${COLLADA_CFLAGS}" \
-		OPENCOLLADA_LIBS="${COLLADA_LIBS}" \
 		PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`" \
 		ac_cv_path_SED=${LOCALBASE}/bin/gsed
