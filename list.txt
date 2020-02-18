@@ -2,7 +2,6 @@ devel/liborcus
 devel/mdds
 
 graphics/libetonyek01
-security/xmlsec1
 
 arabic/libreoffice
 editors/libreoffice
