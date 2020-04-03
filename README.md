@@ -2,6 +2,18 @@
 
 Usage:
 
+Overlay:
+
+- Put this line in /etc/make.conf:
+
+```
+OVERLAYS+=/path/to/freebsd-ports-libreoffice
+```
+
+- Build freebsd-ports-libreoffice/editors/libreoffice and other i18n ports if needed.
+
+Old method:
+
  - Edit sync-out.sh:
 
 ```
