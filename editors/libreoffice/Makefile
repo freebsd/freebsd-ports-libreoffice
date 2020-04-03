@@ -116,8 +116,7 @@ USES=		autoreconf:build bison compiler:c++14-lang cpe gl gmake gnome \
 		perl5 pkgconfig python shebangfix shared-mime-info ssl tar:xz \
 		xorg
 
-OPTIONS_DEFINE=	CUPS DOCS GNOME GTK3 JAVA KF5 MMEDIA PGSQL QT5 SDK \
-		TEST WEBDAV
+OPTIONS_DEFINE=	CUPS DOCS GNOME GTK3 JAVA KF5 MMEDIA PGSQL QT5 SDK TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS GTK3 MMEDIA
 
 GTK3_DESC=	GTK+ 3 GUI toolkit support
@@ -140,14 +139,10 @@ GNOME_IMPLIES=	GTK3
 GNOME_LIB_DEPENDS=	libdbus-glib-1.so:devel/dbus-glib
 GNOME_USE=	GNOME=dconf
 
-GTK_USE_GNOME=	gtk-update-icon-cache
-GTK_USES=	desktop-file-utils
-GTK_VARS=	POST_PLIST=add-plist-gnome
-
 GTK3_CONFIGURE_ENABLE=	gtk3
-GTK3_USE=	GNOME=gtk30,${GTK_USE_GNOME}
-GTK3_USES=	${GTK_USES}
-GTK3_VARS=	${GTK_VARS}
+GTK3_USE=	GNOME=gtk30,gtk-update-icon-cache
+GTK3_USES=	desktop-file-utils
+GTK3_VARS=	POST_PLIST=add-plist-gnome
 
 JAVA_BUILD_DEPENDS=	ant:devel/apache-ant \
 			${JAVAJARDIR}/commons-codec.jar:java/apache-commons-codec \
