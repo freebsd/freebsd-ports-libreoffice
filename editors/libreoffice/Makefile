@@ -93,7 +93,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 DISTFILES+=	884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf:ext
 
-NOT_FOR_ARCHS=		aarch64 armv6 armv7
+NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
 
 .if defined(PRERELEASE)
