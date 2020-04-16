@@ -1,8 +1,8 @@
-TIMESTAMP = 1584626619
-SHA256 (libreoffice/libreoffice-6.4.2.2.tar.xz) = 43b8e3b4680968903a3510de26bf7e816ba77eb26c84054646aad98403a94c19
-SIZE (libreoffice/libreoffice-6.4.2.2.tar.xz) = 234798492
-SHA256 (libreoffice/libreoffice-help-6.4.2.2.tar.xz) = e5a86708d1e5052e618e8c767ba045556c1a1ecf01dc3019a9684ab3ea620eb2
-SIZE (libreoffice/libreoffice-help-6.4.2.2.tar.xz) = 88381732
+TIMESTAMP = 1587046027
+SHA256 (libreoffice/libreoffice-6.4.3.2.tar.xz) = bc14547c188efa15f4cb36cfb3da7cacb3037a7448d1bba8a58ed6a320ccabb2
+SIZE (libreoffice/libreoffice-6.4.3.2.tar.xz) = 230409812
+SHA256 (libreoffice/libreoffice-help-6.4.3.2.tar.xz) = 8570eaa8903e4fb747500adbf06d69d2d3cb6ed3a11a3a804403878f1ecfef56
+SIZE (libreoffice/libreoffice-help-6.4.3.2.tar.xz) = 88297704
 SHA256 (libreoffice/884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf) = 884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc
 SIZE (libreoffice/884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf) = 207544
 SHA256 (libreoffice/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip) = d30b13f4ba2e3b6a2d4f020c0dee0a9fb9fc6fbcc2d561f36b78da4bf3802370
