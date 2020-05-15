@@ -49,7 +49,7 @@ cd ${PORT}
 PWD=`pwd -P`
 PORTDIR=`dirname ${PWD}`
 PORTDIR=`dirname ${PORTDIR}`
-sudo pkg fetch -y -o pkgs `make missing`
+sudo pkg fetch -y -o pkgs `make missing-packages`
 rm -fr /usr/local/poudriere/data/packages/jail-default/.latest/All
 mv pkgs/All /usr/local/poudriere/data/packages/jail-default/.latest/
 rm -fr pkgs
