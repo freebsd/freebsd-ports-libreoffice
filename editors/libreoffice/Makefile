@@ -116,14 +116,14 @@ USES=		autoreconf:build bison compiler:c++14-lang cpe gl gmake gnome \
 		xorg
 
 OPTIONS_DEFINE=	CUPS DOCS GNOME GTK3 JAVA KF5 MMEDIA PGSQL QT5 SDK TEST WEBDAV
-OPTIONS_DEFAULT=	CUPS GTK3 MMEDIA
+OPTIONS_DEFAULT=	CUPS MMEDIA QT5
 
-GTK3_DESC=	GTK+ 3 GUI toolkit support
+GTK3_DESC=	GTK+ 3 GUI toolkit support (broken visual style)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
 KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 MMEDIA_DESC=	Enable multimedia backend for Impress
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
-QT5_DESC=	Qt5 GUI toolkit support
+QT5_DESC=	Qt5 GUI toolkit support (default visual style)
 SDK_DESC=	Build with SDK
 TEST_DESC=	Run all regression tests
 WEBDAV_DESC=	Enable WebDAV protocol
@@ -263,6 +263,10 @@ MAKE_ENV+=	verbose=1
 .include <bsd.port.options.mk>
 
 .include <bsd.port.pre.mk>
+
+.if ${PORT_OPTIONS:MGTK3}
+WARNING=	"GTK3 visual style is bkoken yet, build at your ouwn risk"
+.endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-unused-parameter -Wno-unused-local-typedefs
