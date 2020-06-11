@@ -116,7 +116,10 @@ USES=		autoreconf:build bison compiler:c++14-lang cpe gl gmake gnome \
 		xorg
 
 OPTIONS_DEFINE=	CUPS DOCS GNOME GTK3 JAVA KF5 MMEDIA PGSQL QT5 SDK TEST WEBDAV
-OPTIONS_DEFAULT=	CUPS MMEDIA QT5
+OPTIONS_DEFAULT=	CUPS MMEDIA
+OPTIONS_DEFAULT_FreeBSD_12=	QT5
+OPTIONS_DEFAULT_FreeBSD_13=	QT5
+OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${OPSYS}_${OSREL:R}}
 
 GTK3_DESC=	GTK+ 3 GUI toolkit support (broken visual style)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
