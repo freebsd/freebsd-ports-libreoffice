@@ -1,12 +1,7 @@
-devel/liborcus
-devel/mdds
-
-graphics/libetonyek01
-
 arabic/libreoffice
-editors/libreoffice
 chinese/libreoffice-zh_CN
 chinese/libreoffice-zh_TW
+editors/libreoffice
 editors/libreoffice-af
 editors/libreoffice-am
 editors/libreoffice-as
