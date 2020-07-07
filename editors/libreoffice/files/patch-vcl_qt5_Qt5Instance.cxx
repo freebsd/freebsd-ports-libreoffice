@@ -24,3 +24,12 @@
          assert(pPicker);
          return pPicker;
      }
+@@ -624,7 +630,7 @@ std::unique_ptr<QApplication> Qt5Instance::CreateQAppl
+ extern "C" {
+ VCLPLUG_QT5_PUBLIC SalInstance* create_SalInstance()
+ {
+-    static const bool bUseCairo = (nullptr != getenv("SAL_VCL_QT5_USE_CAIRO"));
++    static const bool bUseCairo = true; // (nullptr != getenv("SAL_VCL_QT5_USE_CAIRO"));
+ 
+     std::unique_ptr<char* []> pFakeArgv;
+     std::unique_ptr<int> pFakeArgc;
