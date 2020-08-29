@@ -1,7 +1,6 @@
-# $FreeBSD: head/editors/libreoffice/Makefile.common 541383 2020-07-07 03:14:58Z fluffy $
+# $FreeBSD: head/editors/libreoffice/Makefile.common 535467 2020-05-16 15:34:26Z fluffy $
 
 PORTNAME=	libreoffice
-PORTVERSION=	6.4.6
 CATEGORIES+=	editors
 
 MAINTAINER=	office@FreeBSD.org
@@ -9,5 +8,9 @@ MAINTAINER=	office@FreeBSD.org
 LICENSE=	LGPL3+ MPL20
 LICENSE_COMB=	dual
 
-LOVERSION=	${PORTVERSION}.${RCVER}
-RCVER=		2
+DISTVERSION=	${LOVERSION}.${RCVER}
+LOVERSION=	7.0.0
+RCVER=		3
+
+#PRERELEASE=	yes
+#DEVRELEASE=	yes
