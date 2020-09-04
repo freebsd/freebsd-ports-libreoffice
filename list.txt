@@ -1,3 +1,5 @@
+textproc/libnumbertext
+
 arabic/libreoffice
 chinese/libreoffice-zh_CN
 chinese/libreoffice-zh_TW
