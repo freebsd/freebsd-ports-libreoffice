@@ -1,5 +1,3 @@
-$OpenBSD: patch-desktop_source_app_app_cxx,v 1.17 2020/02/05 19:58:10 robert Exp $
-Index: desktop/source/app/app.cxx
 --- desktop/source/app/app.cxx.orig
 +++ desktop/source/app/app.cxx
 @@ -564,6 +564,7 @@ void Desktop::InitFinished()

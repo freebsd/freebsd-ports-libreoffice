@@ -1,6 +1,3 @@
-$OpenBSD: patch-basic_source_classes_sbxmod_cxx,v 1.3 2020/02/05 19:58:10 robert Exp $
-
-Index: basic/source/classes/sbxmod.cxx
 --- basic/source/classes/sbxmod.cxx.orig
 +++ basic/source/classes/sbxmod.cxx
 @@ -1059,7 +1059,7 @@ void SbModule::Run( SbMethod* pMeth )
