@@ -1,4 +1,4 @@
-# $FreeBSD: $
+# $FreeBSD: head/editors/libreoffice-fur/Makefile 545101 2020-08-16 12:41:23Z fluffy $
 
 LO_I18N=	fur
 

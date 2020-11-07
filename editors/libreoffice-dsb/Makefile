@@ -1,4 +1,4 @@
-# $FreeBSD$
+# $FreeBSD: head/editors/libreoffice-dsb/Makefile 496620 2019-03-23 01:43:30Z lwhsu $
 
 LO_I18N=	dsb
 
