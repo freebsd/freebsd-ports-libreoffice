@@ -1,4 +1,4 @@
-[![Build Status](https://api.cirrus-ci.com/github/lwhsu/freebsd-ports-libreoffice.svg)](https://cirrus-ci.com/github/lwhsu/freebsd-ports-libreoffice)
+[![Build Status](https://api.cirrus-ci.com/github/freebsd/freebsd-ports-libreoffice.svg)](https://cirrus-ci.com/github/freebsd/freebsd-ports-libreoffice)
 
 Usage:
 
