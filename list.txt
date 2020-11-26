@@ -1,5 +1,4 @@
 devel/liborcus
-www/neon
 
 arabic/libreoffice
 chinese/libreoffice-zh_CN
