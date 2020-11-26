@@ -92,9 +92,9 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/Liberation/LiberationMono-Bold.ttf:x11-fonts/liberation-fonts-ttf \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
-DISTFILES+=	884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf:ext
+DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
-DISTFILES+=	skia-m86-e1e24080421116cf5d63b55cd5042176bebc0a43.tar.xz:src
+DISTFILES+=	skia-m88-59bafeeaa7de9eb753e3778c414e01dcf013dcd8.tar.xz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -309,7 +309,7 @@ post-install:
 	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s bin lib man -not -type d >> ${TMPPLIST}
-.for subdir in appdata application-registry applications bash-completion icons mime mime-info
+.for subdir in appdata applications bash-completion icons mime
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s share/${subdir} -not -type d >> ${TMPPLIST}
 .endfor
