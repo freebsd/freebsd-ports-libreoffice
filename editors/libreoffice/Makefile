@@ -1,5 +1,5 @@
 # $FreeBSD: head/editors/libreoffice/Makefile 554017 2020-11-03 19:48:54Z tcberner $
-PORTREVISION=	2
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -218,6 +218,7 @@ SDK_CONFIGURE_OFF=	--without-doxygen
 SDK_CONFIGURE_ON=	--with-doxygen=${LOCALBASE}/bin/doxygen
 SDK_DISTFILES=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:ext
 
+TEST_ALL_TARGET=	build
 TEST_ALL_TARGET_OFF=	build-nocheck
 TEST_CONFIGURE_ENABLE=	cve-tests
 
