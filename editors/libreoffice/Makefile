@@ -1,4 +1,4 @@
-# $FreeBSD: head/editors/libreoffice/Makefile 554017 2020-11-03 19:48:54Z tcberner $
+# $FreeBSD: head/editors/libreoffice/Makefile 557760 2020-12-11 20:10:03Z tcberner $
 PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
@@ -121,10 +121,12 @@ USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
 		pkgconfig python:3.5+ shebangfix shared-mime-info ssl tar:xz xorg
 
 OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 JAVA KF5 MMEDIA PGSQL QT5 SDK TEST WEBDAV
-OPTIONS_DEFAULT=	CUPS MMEDIA
-OPTIONS_DEFAULT_FreeBSD_12=	QT5
-OPTIONS_DEFAULT_FreeBSD_13=	QT5
-OPTIONS_DEFAULT+=	${OPTIONS_DEFAULT_${OPSYS}_${OSREL:R}}
+OPTIONS_DEFAULT=	CUPS MMEDIA QT5
+
+.if !defined(DEFAULT_VERSIONS) || ! ${DEFAULT_VERSIONS:Mssl=*}
+# Blocked by net/qt5-network: cannot use QT5 with default OpenSSL
+OPTIONS_EXCLUDE_FreeBSD_11+=	QT5
+.endif
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
 GTK3_DESC=	GTK+ 3 GUI toolkit support (incomplete visual style)
@@ -278,7 +280,7 @@ MAKE_ENV+=	verbose=1
 
 .include <bsd.port.pre.mk>
 
-.if ${ARCH:Mpowerpc*}
+.if ${ARCH} == powerpc || ${ARCH} == powerpcspe || ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--disable-skia
 .endif
 
