@@ -285,10 +285,6 @@ MAKE_ENV+=	verbose=1
 CONFIGURE_ARGS+=	--disable-skia
 .endif
 
-.if ${PORT_OPTIONS:MGTK3}
-WARNING=	"GTK3 visual style is incomplete yet, build at your own risk"
-.endif
-
 .if ${CHOSEN_COMPILER_TYPE} == clang
 CXXFLAGS_WARN=	-Woverloaded-virtual -Wno-unused-parameter -Wno-unused-local-typedefs
 .else
