@@ -1,4 +1,6 @@
 devel/liborcus
+devel/mdds
+textproc/libwps
 
 arabic/libreoffice
 chinese/libreoffice-zh_CN
