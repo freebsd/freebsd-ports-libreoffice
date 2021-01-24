@@ -36,7 +36,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		liborcus-0.16.so:devel/liborcus \
 		libplds4.so:devel/nspr \
 		libcurl.so:ftp/curl \
-		libcairo.so:graphics/cairo \
 		libgraphite2.so:graphics/graphite2 \
 		liblcms2.so:graphics/lcms2 \
 		libcdr-0.1.so:graphics/libcdr01 \
@@ -75,8 +74,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libvisio-0.1.so:textproc/libvisio01 \
 		libwpd-0.10.so:textproc/libwpd010 \
 		libwps-0.4.so:textproc/libwps \
-		libxml2.so:textproc/libxml2 \
-		libxslt.so:textproc/libxslt \
 		libmythes-1.2.so:textproc/mythes \
 		libraptor2.so:textproc/raptor2 \
 		librdf.so:textproc/redland \
@@ -114,7 +111,7 @@ USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
 		gettext-runtime gl gmake gnome jpeg mysql:client perl5 pkgconfig \
 		pkgconfig python:3.6+ shebangfix shared-mime-info ssl tar:xz xorg
 USE_GL=		gl glew glu
-USE_GNOME=	glib20
+USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
