@@ -110,14 +110,14 @@ INSTALL_TARGET=	distro-pack-install
 SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
+USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
+		gettext-runtime gl gmake gnome jpeg mysql:client perl5 pkgconfig \
+		pkgconfig python:3.6+ shebangfix shared-mime-info ssl tar:xz xorg
 USE_GL=		gl glew glu
 USE_GNOME=	glib20
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
-USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
-		gettext-runtime gl gmake gnome jpeg mysql:client perl5 pkgconfig \
-		pkgconfig python:3.5+ shebangfix shared-mime-info ssl tar:xz xorg
 
 OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 JAVA KF5 MMEDIA PGSQL QT5 SDK TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS MMEDIA QT5
@@ -282,6 +282,10 @@ MAKE_ENV+=	verbose=1
 .include <bsd.port.pre.mk>
 
 .if ${ARCH:Mpowerpc*}
+EXTRA_PATCHES+=	${FILESDIR}/powerpc64
+.endif
+
+.if ${ARCH:Mpowerpc*}
 CONFIGURE_ARGS+=	--disable-skia
 .endif
 
@@ -310,7 +314,7 @@ post-install:
 	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s bin lib man -not -type d >> ${TMPPLIST}
-.for subdir in appdata applications bash-completion icons mime
+.for subdir in applications bash-completion icons metainfo mime
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s share/${subdir} -not -type d >> ${TMPPLIST}
 .endfor
