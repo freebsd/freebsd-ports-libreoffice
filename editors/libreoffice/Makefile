@@ -1,4 +1,5 @@
-# $FreeBSD: head/editors/libreoffice/Makefile 545268 2020-08-19 00:44:38Z pkubaj $
+# $FreeBSD: head/editors/libreoffice/Makefile 557760 2020-12-11 20:10:03Z tcberner $
+PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"
 
@@ -280,9 +281,8 @@ MAKE_ENV+=	verbose=1
 
 .if ${ARCH:Mpowerpc*}
 EXTRA_PATCHES+=	${FILESDIR}/powerpc64
-.endif
 
-.if ${ARCH:Mpowerpc*}
+.if ${ARCH} == powerpc || ${ARCH} == powerpcspe || ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--disable-skia
 .endif
 
