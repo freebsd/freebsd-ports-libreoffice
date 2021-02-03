@@ -281,6 +281,7 @@ MAKE_ENV+=	verbose=1
 
 .if ${ARCH:Mpowerpc*}
 EXTRA_PATCHES+=	${FILESDIR}/powerpc64
+.endif
 
 .if ${ARCH} == powerpc || ${ARCH} == powerpcspe || ${ARCH} == powerpc64
 CONFIGURE_ARGS+=	--disable-skia
