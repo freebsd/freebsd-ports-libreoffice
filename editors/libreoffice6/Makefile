@@ -34,12 +34,10 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libltdl.so:devel/libltdl \
 		libplds4.so:devel/nspr \
 		libcurl.so:ftp/curl \
-		libcairo.so:graphics/cairo \
 		libgraphite2.so:graphics/graphite2 \
 		liblcms2.so:graphics/lcms2 \
 		libcdr-0.1.so:graphics/libcdr01 \
 		libepoxy.so:graphics/libepoxy \
-		libetonyek-0.1.so:graphics/libetonyek01 \
 		libfreehand-0.1.so:graphics/libfreehand \
 		libgltf-0.0.so:graphics/libgltf \
 		libwpg-0.3.so:graphics/libwpg03 \
@@ -73,8 +71,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libvisio-0.1.so:textproc/libvisio01 \
 		libwpd-0.10.so:textproc/libwpd010 \
 		libwps-0.4.so:textproc/libwps \
-		libxml2.so:textproc/libxml2 \
-		libxslt.so:textproc/libxslt \
 		libmythes-1.2.so:textproc/mythes \
 		libraptor2.so:textproc/raptor2 \
 		librdf.so:textproc/redland \
@@ -93,6 +89,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 DISTFILES+=	884ed41809687c3e168fc7c19b16585149ff058eca79acbf3ee784f6630704cc-opens___.ttf:ext
 DISTFILES+=	mdds-1.5.0.tar.bz2:src
 DISTFILES+=	liborcus-0.15.3.tar.gz:src
+DISTFILES+=	libetonyek-0.1.9.tar.xz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -110,6 +107,7 @@ SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
 USE_GL=		gl glew glu
+USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
@@ -207,7 +205,7 @@ KF5_USES=	kde:5
 KF5_IMPLIES=	QT5
 
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
-MMEDIA_USE=	GNOME=glib20 GSTREAMER1=yes
+MMEDIA_USE=	GSTREAMER1=yes
 
 PGSQL_CONFIGURE_ENABLE=	postgresql-sdbc
 PGSQL_CONFIGURE_WITH=	gssapi krb5
@@ -260,6 +258,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-zlib \
 		--with-system-mdds=no \
 		--with-system-orcus=no \
+		--with-system-libetonyek=no \
 		--with-vendor="FreeBSD ports" \
 		--without-fonts \
 		--without-myspell-dicts
