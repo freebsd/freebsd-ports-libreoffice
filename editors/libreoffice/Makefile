@@ -1,5 +1,5 @@
-# $FreeBSD: head/editors/libreoffice/Makefile 557760 2020-12-11 20:10:03Z tcberner $
-PORTREVISION=	0
+# $FreeBSD: head/editors/libreoffice/Makefile 565507 2021-02-17 15:06:12Z fluffy $
+PORTREVISION=	2
 
 .include "${.CURDIR}/Makefile.common"
 
