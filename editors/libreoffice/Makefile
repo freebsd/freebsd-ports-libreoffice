@@ -1,4 +1,4 @@
-# $FreeBSD: head/editors/libreoffice/Makefile 566388 2021-02-23 11:02:21Z pkubaj $
+# $FreeBSD: head/editors/libreoffice/Makefile 567836 2021-03-08 11:22:01Z fluffy $
 PORTREVISION=	2
 
 .include "${.CURDIR}/Makefile.common"
@@ -30,7 +30,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		flex>=0.26:textproc/flex
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
-		libBox2D.so:misc/box2d \
+		libbox2d.so:misc/box2d \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
 		libltdl.so:devel/libltdl \
