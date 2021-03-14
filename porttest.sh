@@ -38,19 +38,16 @@ poudriere ports -c -f none -m null -M /usr/ports
 # bootstrap pkg repo
 poudriere bulk -t -j jail ports-mgmt/pkg
 
-cd /usr/ports
-cd ${PORT}
-PWD=`pwd -P`
-PORTDIR=`dirname ${PWD}`
-PORTDIR=`dirname ${PORTDIR}`
-sudo pkg fetch -y -o pkgs `make missing-packages`
-rm -fr /usr/local/poudriere/data/packages/jail-default/.latest/All
-mv pkgs/All /usr/local/poudriere/data/packages/jail-default/.latest/
-rm -fr pkgs
+cd /usr/ports/${PORT}
+make all-depends-list | awk -F'/' '{print $4"/"$5}' | xargs \
+pkg fetch -y -o /usr/local/poudriere/data/packages/jail-default/.latest
 
 set +e
 poudriere testport -j jail ${PORT}
 RESULT=$?
+if [ ${RESULT} -eq 0 ]; then
+	exit 0
+fi
 set -e
 
 ls -l /usr/local/poudriere/data/logs/bulk/jail-default/latest/logs/errors
