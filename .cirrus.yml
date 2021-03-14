@@ -5,8 +5,8 @@ env:
 task:
   timeout_in: 120m
   compute_engine_instance:
-    cpu: 4
-    memory: 8g
+    cpu: 8
+    memory: 24g
     disk: 40
     image_project: freebsd-org-cloud-dev
     platform: freebsd
