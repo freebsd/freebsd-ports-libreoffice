@@ -1,4 +1,3 @@
-# $FreeBSD: head/editors/libreoffice/Makefile 567836 2021-03-08 11:22:01Z fluffy $
 PORTREVISION=	0
 
 .include "${.CURDIR}/Makefile.common"

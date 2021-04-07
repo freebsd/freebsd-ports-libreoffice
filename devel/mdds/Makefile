@@ -1,5 +1,3 @@
-# $FreeBSD: head/devel/mdds/Makefile 538638 2020-06-13 06:32:11Z fluffy $
-
 PORTNAME=	mdds
 PORTVERSION=	1.7.0
 CATEGORIES=	devel

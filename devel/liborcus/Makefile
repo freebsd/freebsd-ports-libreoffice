@@ -1,5 +1,3 @@
-# $FreeBSD: head/devel/liborcus/Makefile 538639 2020-06-13 06:34:20Z fluffy $
-
 PORTNAME=	liborcus
 PORTVERSION=	0.16.1
 PORTREVISION=	1

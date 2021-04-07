@@ -1,5 +1,3 @@
-# $FreeBSD: head/editors/libreoffice/Makefile.i18n 545101 2020-08-16 12:41:23Z fluffy $
-
 .include "${.CURDIR}/../../editors/libreoffice/Makefile.common"
 
 MASTER_SITES=	https://download.documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR}/

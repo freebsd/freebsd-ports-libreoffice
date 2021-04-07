@@ -1,5 +1,3 @@
-# $FreeBSD: head/graphics/libetonyek01/Makefile 519824 2019-12-11 17:53:48Z jbeich $
-
 PORTNAME=	libetonyek
 PORTVERSION=	0.1.9
 PORTREVISION=	7

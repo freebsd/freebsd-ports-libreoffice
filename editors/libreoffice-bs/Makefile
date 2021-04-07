@@ -1,5 +1,3 @@
-# $FreeBSD: head/editors/libreoffice-bs/Makefile 397662 2015-09-23 21:06:12Z jkim $
-
 LO_I18N=	bs
 LO_HAS_HELPPACK=	yes
 

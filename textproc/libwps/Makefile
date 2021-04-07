@@ -1,5 +1,4 @@
 # Created by: Michael Johnson <ahze@FreeBSD.org>
-# $FreeBSD: head/textproc/libwps/Makefile 545098 2020-08-16 12:12:43Z fluffy $
 
 PORTNAME=	libwps
 PORTVERSION=	0.4.12
