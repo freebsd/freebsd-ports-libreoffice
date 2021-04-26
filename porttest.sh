@@ -10,7 +10,7 @@ pwd
 
 cd /usr
 mv ports ports.old
-git clone --depth=1 --single-branch -b master https://github.com/freebsd/freebsd-ports.git ports
+git clone --depth=1 --single-branch -b main https://github.com/freebsd/freebsd-ports.git ports
 
 cd ${CIRRUS_WORKING_DIR}
 for p in `cat list.txt`
