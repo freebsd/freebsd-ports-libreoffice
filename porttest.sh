@@ -35,11 +35,8 @@ mkdir -p /usr/local/poudriere
 poudriere jail -c -j jail -v `uname -r`
 poudriere ports -c -f none -m null -M /usr/ports
 
-# bootstrap pkg repo
-poudriere bulk -tr -b latest -j jail ports-mgmt/pkg
-
 set +e
-poudriere testport -j jail ${PORT}
+poudriere testport -b latest -j jail ${PORT}
 RESULT=$?
 if [ ${RESULT} -eq 0 ]; then
 	exit 0
