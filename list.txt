@@ -1,3 +1,5 @@
+net/libcmis
+
 arabic/libreoffice
 chinese/libreoffice-zh_CN
 chinese/libreoffice-zh_TW
@@ -106,7 +108,6 @@ editors/libreoffice-ve
 editors/libreoffice-vec
 editors/libreoffice-xh
 editors/libreoffice-zu
-editors/libreoffice6
 french/libreoffice
 german/libreoffice
 hebrew/libreoffice
