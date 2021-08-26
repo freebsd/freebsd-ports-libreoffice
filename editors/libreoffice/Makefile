@@ -109,7 +109,7 @@ SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
-		gettext-runtime gl gmake gnome jpeg perl5 pkgconfig python:3.6+ \
+		gettext-runtime gl gmake gnome jpeg perl5 pkgconfig python:3.8+ \
 		shebangfix shared-mime-info ssl tar:xz xorg
 USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt

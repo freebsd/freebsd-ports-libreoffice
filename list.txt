@@ -1,4 +1,7 @@
-net/libcmis
+graphics/libcdr01
+graphics/libetonyek01
+textproc/libmwaw03
+textproc/libodfgen01
 
 arabic/libreoffice
 chinese/libreoffice-zh_CN
