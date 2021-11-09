@@ -1,17 +1,17 @@
---- vcl/qt5/Qt5Instance.cxx.orig	2021-09-08 17:53:20 UTC
-+++ vcl/qt5/Qt5Instance.cxx
-@@ -476,7 +476,7 @@ Qt5Instance::createPicker(css::uno::Reference<css::uno
+--- vcl/qt5/QtInstance.cxx.orig	2021-10-29 17:06:25 UTC
++++ vcl/qt5/QtInstance.cxx
+@@ -478,7 +478,7 @@ QtInstance::createPicker(css::uno::Reference<css::uno:
      {
          SolarMutexGuard g;
-         rtl::Reference<Qt5FilePicker> pPicker;
+         rtl::Reference<QtFilePicker> pPicker;
 -        RunInMainThread([&, this]() { pPicker = createPicker(context, eMode); });
 +        RunInMainThread([&pPicker, this, context, eMode]() { pPicker = createPicker(context, eMode); });
          assert(pPicker);
          return pPicker;
      }
-@@ -681,7 +681,7 @@ std::unique_ptr<QApplication> Qt5Instance::CreateQAppl
+@@ -688,7 +688,7 @@ std::unique_ptr<QApplication> QtInstance::CreateQAppli
  extern "C" {
- VCLPLUG_QT5_PUBLIC SalInstance* create_SalInstance()
+ VCLPLUG_QT_PUBLIC SalInstance* create_SalInstance()
  {
 -    static const bool bUseCairo = (nullptr != getenv("SAL_VCL_QT5_USE_CAIRO"));
 +    static const bool bUseCairo = true; // (nullptr != getenv("SAL_VCL_QT5_USE_CAIRO"));

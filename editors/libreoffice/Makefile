@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		gperf>=3.1:devel/gperf \
-		mdds>=1.5:devel/mdds \
+		mdds>=1.7:devel/mdds \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
@@ -92,7 +92,8 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
-DISTFILES+=	skia-m90-45c57e116ee0ce214bdf78405a4762722e4507d9.tar.xz:src
+DISTFILES+=	skia-m94-975fcdd755dfc5d57cddbb25857e0c4ac29abe98.tar.xz:src
+DISTFILES+=	libcuckoo-93217f8d391718380c508a722ab9acd5e9081233.tar.gz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -252,6 +253,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-os-version=${OSVERSION} \
 		--with-parallelism=${MAKE_JOBS_NUMBER} \
 		--with-system-cppunit \
+		--with-system-cuckoo=no \
 		--with-system-curl \
 		--with-system-dicts \
 		--with-system-libs \

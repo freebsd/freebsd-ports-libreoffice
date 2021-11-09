@@ -1,6 +1,6 @@
---- configure.orig	2021-03-24 16:30:40 UTC
+--- configure.orig	2021-10-29 18:07:38 UTC
 +++ configure
-@@ -13223,6 +13223,11 @@ freebsd*)
+@@ -14154,6 +14154,11 @@ freebsd*)
          RTL_ARCH=PowerPC_64
          PLATFORMID=freebsd_powerpc64
          ;;
@@ -12,7 +12,7 @@
      powerpc|powerpcspe)
          CPUNAME=POWERPC
          RTL_ARCH=PowerPC
-@@ -31720,12 +31720,12 @@ if test -n "$MDDS_CFLAGS"; then
+@@ -31675,12 +31680,12 @@ if test -n "$MDDS_CFLAGS"; then
      pkg_cv_MDDS_CFLAGS="$MDDS_CFLAGS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
@@ -28,7 +28,7 @@
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -31737,12 +31737,12 @@ if test -n "$MDDS_LIBS"; then
+@@ -31692,12 +31697,12 @@ if test -n "$MDDS_LIBS"; then
      pkg_cv_MDDS_LIBS="$MDDS_LIBS"
   elif test -n "$PKG_CONFIG"; then
      if test -n "$PKG_CONFIG" && \
@@ -44,7 +44,7 @@
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -31763,14 +31763,14 @@ else
+@@ -31718,14 +31723,14 @@ else
          _pkg_short_errors_supported=no
  fi
          if test $_pkg_short_errors_supported = yes; then
@@ -62,7 +62,7 @@
  
  $MDDS_PKG_ERRORS
  
-@@ -36014,7 +36019,7 @@ else $as_nop
+@@ -36052,7 +36057,7 @@ else $as_nop
    as_fn_error $? "zxing headers not found." "$LINENO" 5
  fi
  
