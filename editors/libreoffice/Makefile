@@ -119,10 +119,11 @@ USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
 
 OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF5 LTO MMEDIA PGSQL MARIADB QT5 SDK TEST WEBDAV
-OPTIONS_DEFAULT=	CUPS JAVA MMEDIA QT5
+OPTIONS_DEFAULT=	CUPS DOCS JAVA MMEDIA QT5
+OPTIONS_EXCLUDE=	GTK4
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
-GTK4_DESC=	GTK+ 4 GUI toolkit support
+GTK4_DESC=	GTK+ 4 GUI toolkit support (broken)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
 KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 MMEDIA_DESC=	Enable multimedia backend for Impress
@@ -140,7 +141,7 @@ COINMP_LIB_DEPENDS=	libCoinMP.so:math/coinmp
 CUPS_CONFIGURE_ENABLE=	cups
 CUPS_LIB_DEPENDS=	libcups.so:print/cups
 
-DOCS_CONFIGURE_WITH=	help
+DOCS_CONFIGURE_ON=	--with-help=html
 
 GNOME_CONFIGURE_ENABLE=	dbus dconf
 GNOME_IMPLIES=	GTK3
