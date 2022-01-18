@@ -18,7 +18,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		gperf>=3.1:devel/gperf \
-		mdds>=1.7:devel/mdds \
+		mdds>=2.0:devel/mdds \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
@@ -33,7 +33,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
 		libltdl.so:devel/libltdl \
-		liborcus-0.16.so:devel/liborcus \
+		liborcus-0.17.so:devel/liborcus \
 		libplds4.so:devel/nspr \
 		libcurl.so:ftp/curl \
 		libgraphite2.so:graphics/graphite2 \
@@ -42,7 +42,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libepoxy.so:graphics/libepoxy \
 		libetonyek-0.1.so:graphics/libetonyek01 \
 		libfreehand-0.1.so:graphics/libfreehand \
-		libgltf-0.0.so:graphics/libgltf \
 		libwpg-0.3.so:graphics/libwpg03 \
 		libzmf-0.0.so:graphics/libzmf \
 		libpng.so:graphics/png \
@@ -65,6 +64,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libe-book-0.1.so:textproc/libe-book \
 		libepubgen-0.1.so:textproc/libepubgen \
 		libexttextcat-2.0.so:textproc/libexttextcat \
+		libixion-0.17.so:textproc/libixion \
 		libmwaw-0.3.so:textproc/libmwaw03 \
 		libnumbertext-1.0.so:textproc/libnumbertext \
 		libodfgen-0.1.so:textproc/libodfgen01 \
@@ -92,7 +92,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
-DISTFILES+=	skia-m94-975fcdd755dfc5d57cddbb25857e0c4ac29abe98.tar.xz:src
+DISTFILES+=	skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz:src
 DISTFILES+=	libcuckoo-93217f8d391718380c508a722ab9acd5e9081233.tar.gz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
@@ -110,7 +110,7 @@ SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
-		gettext-runtime gl gmake gnome jpeg perl5 pkgconfig python:3.8-3.9 \
+		gettext-runtime gl gmake gnome jpeg perl5 pkgconfig python:3.9 \
 		shebangfix shared-mime-info ssl tar:xz xorg
 USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt
@@ -228,7 +228,6 @@ TEST_CONFIGURE_ENABLE=	cve-tests
 
 WEBDAV_CONFIGURE_ON=	--with-webdav=neon
 WEBDAV_CONFIGURE_OFF=	--with-webdav=no
-WEBDAV_CONFIGURE_ENABLE=	neon
 WEBDAV_LIB_DEPENDS=	libneon.so:www/neon
 
 CPPFLAGS+=	-isystem ${LOCALBASE}/include
@@ -243,6 +242,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-cairo-canvas \
 		--enable-python=system \
 		--enable-release-build \
+		--enable-pch=no \
 		--disable-pdfium \
 		--exec-prefix=${PREFIX} \
 		--with-boost=${LOCALBASE} \
@@ -279,12 +279,15 @@ CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		ac_cv_path_SED=${LOCALBASE}/bin/gsed
 
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
+MAKE_SHELL=		${LOCALBASE}/bin/bash
 
 MAKE_ARGS+=	TMPDIR=${WRKDIR}
 MAKE_ENV+=	CXXFLAGS_WARN="${CXXFLAGS_WARN}"
 MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	DISPLAY=
 MAKE_ENV+=	verbose=1
+
+MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
 
