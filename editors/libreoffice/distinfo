@@ -1,4 +1,4 @@
-TIMESTAMP = 1642533437
+TIMESTAMP = 1642589904
 SHA256 (libreoffice/libreoffice-7.3.0.2.tar.xz) = deac7c0192df8547c6a7ab5ab6ae9173cc5e6afa17be1629d182cd68b2b59095
 SIZE (libreoffice/libreoffice-7.3.0.2.tar.xz) = 254868220
 SHA256 (libreoffice/libreoffice-help-7.3.0.2.tar.xz) = 60871bacd39fce23f8347ad79344af8dbabeb418a53bebb47f22af660060b5c1
@@ -7,8 +7,8 @@ SHA256 (libreoffice/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9
 SIZE (libreoffice/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf) = 207992
 SHA256 (libreoffice/dtoa-20180411.tgz) = 0082d0684f7db6f62361b76c4b7faba19e0c7ce5cb8e36c4b65fea8281e711b4
 SIZE (libreoffice/dtoa-20180411.tgz) = 48893
-SHA256 (libreoffice/skia-m94-975fcdd755dfc5d57cddbb25857e0c4ac29abe98.tar.xz) = f69f9164ee982a8254722e1100aa7d31f78a5cd5e084418a3e202b55104fc3e2
-SIZE (libreoffice/skia-m94-975fcdd755dfc5d57cddbb25857e0c4ac29abe98.tar.xz) = 11672176
+SHA256 (libreoffice/skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz) = 97e859e8467eca9d2441cd23079b61c2c3863b5687620f18cc31a9f966740177
+SIZE (libreoffice/skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz) = 11826600
 SHA256 (libreoffice/libcuckoo-93217f8d391718380c508a722ab9acd5e9081233.tar.gz) = 471dd83a813ed2816c2246c373004470ad0f6612c7ce72038929dc5161cdd58e
 SIZE (libreoffice/libcuckoo-93217f8d391718380c508a722ab9acd5e9081233.tar.gz) = 5005888
 SHA256 (libreoffice/17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip) = d30b13f4ba2e3b6a2d4f020c0dee0a9fb9fc6fbcc2d561f36b78da4bf3802370
