@@ -64,7 +64,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libe-book-0.1.so:textproc/libe-book \
 		libepubgen-0.1.so:textproc/libepubgen \
 		libexttextcat-2.0.so:textproc/libexttextcat \
-		libixion-0.17.so:textproc/libixion \
 		libmwaw-0.3.so:textproc/libmwaw03 \
 		libnumbertext-1.0.so:textproc/libnumbertext \
 		libodfgen-0.1.so:textproc/libodfgen01 \
@@ -110,8 +109,8 @@ SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
-		gettext-runtime gl gmake gnome jpeg perl5 pkgconfig python:3.9 \
-		shebangfix shared-mime-info ssl tar:xz xorg
+		gettext-runtime gl gmake gnome jpeg localbase:ldflags perl5 pkgconfig \
+		python:3.8-3.9 shebangfix shared-mime-info ssl tar:xz xorg
 USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_OPENLDAP=	yes
@@ -193,7 +192,7 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:src \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:src
 JAVA_USE=	JAVA=yes
-JAVA_VARS=	JAVA_BUILD=yes JAVA_RUN=yes JAVA_VERSION=11+
+JAVA_VARS=	JAVA_BUILD=yes JAVA_RUN=yes JAVA_VERSION=11
 
 KF5_CONFIGURE_ENABLE=	kf5
 KF5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
@@ -230,9 +229,6 @@ WEBDAV_CONFIGURE_ON=	--with-webdav=neon
 WEBDAV_CONFIGURE_OFF=	--with-webdav=no
 WEBDAV_LIB_DEPENDS=	libneon.so:www/neon
 
-CPPFLAGS+=	-isystem ${LOCALBASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib
-
 CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--disable-epm \
 		--disable-fetch-external \
@@ -242,7 +238,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-cairo-canvas \
 		--enable-python=system \
 		--enable-release-build \
-		--enable-pch=no \
 		--disable-pdfium \
 		--exec-prefix=${PREFIX} \
 		--with-boost=${LOCALBASE} \
@@ -265,6 +260,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-vendor="FreeBSD ports" \
 		--without-fonts \
 		--without-myspell-dicts
+#		--enable-pch=no \
 #		--with-helppack-integration=no \
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
