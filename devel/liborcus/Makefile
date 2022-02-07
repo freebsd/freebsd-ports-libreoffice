@@ -1,7 +1,7 @@
 PORTNAME=	liborcus
 PORTVERSION=	0.17.2
 CATEGORIES=	devel misc
-MASTER_SITES=	http://kohei.us/files/orcus/src/
+MASTER_SITES=	https://kohei.us/files/orcus/src/
 
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	Standalone file import filter library for spreadsheet documents
