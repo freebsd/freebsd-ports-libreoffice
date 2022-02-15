@@ -1,6 +1,6 @@
---- Makefile.in.orig	2020-11-22 14:05:28 UTC
+--- Makefile.in.orig	2022-01-26 14:35:29 UTC
 +++ Makefile.in
-@@ -268,7 +268,7 @@ endif
+@@ -275,7 +275,7 @@ endif
  #
  # Bootstrap
  #
@@ -9,7 +9,7 @@
  
  #
  # Build
-@@ -393,7 +393,7 @@ else
+@@ -405,7 +405,7 @@ else
  	@exit 1
  endif
  

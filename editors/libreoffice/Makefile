@@ -26,8 +26,10 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		bash:shells/bash \
 		gsed:textproc/gsed \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
+		coreutils>=8.23:sysutils/coreutils \
 		flex>=0.26:textproc/flex
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
+		libabsl_strings.so:devel/abseil \
 		libboost_date_time.so:devel/boost-libs \
 		libbox2d.so:misc/box2d \
 		libicutu.so:devel/icu \
@@ -44,6 +46,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libfreehand-0.1.so:graphics/libfreehand \
 		libwpg-0.3.so:graphics/libwpg03 \
 		libzmf-0.0.so:graphics/libzmf \
+		libopenjp2.so:graphics/openjpeg \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
 		libqrcodegencpp.so:graphics/qr-code-generator \
@@ -54,6 +57,10 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
 		libmspub-0.1.so:print/libmspub01 \
 		libpagemaker-0.0.so:print/libpagemaker \
+		libassuan.so:security/libassuan \
+		libgpgme.so:security/gpgme \
+		libgpgmepp.so:security/gpgme-cpp \
+		libgpg-error.so:security/libgpg-error \
 		libnss3.so:security/nss \
 		libxmlsec1-nss.so:security/xmlsec1 \
 		libclucene-core.so:textproc/clucene \
@@ -91,6 +98,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
+DISTFILES+=	pdfium-4699.tar.bz2:src
 DISTFILES+=	skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz:src
 DISTFILES+=	libcuckoo-93217f8d391718380c508a722ab9acd5e9081233.tar.gz:src
 
@@ -109,13 +117,15 @@ SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
-		gettext-runtime gl gmake gnome jpeg localbase:ldflags perl5 pkgconfig \
+		gettext gl gmake gnome jpeg localbase:ldflags perl5 pkgconfig \
 		python:3.8-3.9 shebangfix shared-mime-info ssl tar:xz xorg
 USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
+
+#LDFLAGS+=	-lexecinfo
 
 OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF5 LTO MMEDIA PGSQL MARIADB QT5 SDK TEST WEBDAV
 OPTIONS_DEFAULT=	CUPS DOCS JAVA MMEDIA QT5
@@ -169,6 +179,7 @@ JAVA_CONFIGURE_ON=	--with-ant-home=${LOCALBASE}/share/java/apache-ant \
 			--with-jdk-home="${JAVA_HOME}" \
 			--with-junit=${JAVAJARDIR}/junit.jar \
 			--with-hamcrest=${JAVAJARDIR}/hamcrest.jar \
+			--with-system-jars \
 			--without-system-beanshell \
 			--without-system-jfreereport
 JAVA_CONFIGURE_WITH=	java
@@ -238,7 +249,9 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--enable-cairo-canvas \
 		--enable-python=system \
 		--enable-release-build \
-		--disable-pdfium \
+		--enable-extension-integration \
+		--disable-mpl-subset \
+		--disable-report-builder \
 		--exec-prefix=${PREFIX} \
 		--with-boost=${LOCALBASE} \
 		--with-build-version="FreeBSD ports ${PKGVERSION}" \
@@ -248,23 +261,28 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-external-thes-dir=${LOCALBASE}/share/mythes \
 		--with-os-version=${OSVERSION} \
 		--with-parallelism=${MAKE_JOBS_NUMBER} \
+		--with-system-abseil \
 		--with-system-cppunit \
 		--with-system-cuckoo=no \
 		--with-system-curl \
 		--with-system-dicts \
+		--with-system-gpgmepp \
 		--with-system-libs \
 		--with-system-libxml \
+		--with-system-mdds \
+		--with-system-openjpeg \
+		--with-system-orcus \
 		--with-system-ucpp \
 		--with-system-zlib \
 		--with-system-zxing \
+		--with-tls=nss \
 		--with-vendor="FreeBSD ports" \
 		--without-fonts \
 		--without-myspell-dicts
-#		--enable-pch=no \
-#		--with-helppack-integration=no \
 
 CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		FLEX=${LOCALBASE}/bin/flex \
+		CONFIG_SHELL=${LOCALBASE}/bin/bash \
 		GNUTAR="${TAR}" \
 		GPERF=${LOCALBASE}/bin/gperf \
 		ICU_CFLAGS="`icu-config --cflags`" \
@@ -282,8 +300,6 @@ MAKE_ENV+=	CXXFLAGS_WARN="${CXXFLAGS_WARN}"
 MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	DISPLAY=
 MAKE_ENV+=	verbose=1
-
-MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
 

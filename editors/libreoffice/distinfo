@@ -1,4 +1,4 @@
-TIMESTAMP = 1643669748
+TIMESTAMP = 1644791417
 SHA256 (libreoffice/libreoffice-7.3.0.3.tar.xz) = 98d369c9541f0c3286345b93f448f2ceb2e344865ee01bdd58f3bb27f08f3f25
 SIZE (libreoffice/libreoffice-7.3.0.3.tar.xz) = 254873208
 SHA256 (libreoffice/libreoffice-help-7.3.0.3.tar.xz) = 53b091291b1a857e98db9332386322ffa1410932b53215fa8eecb7acd96d931b
@@ -7,6 +7,8 @@ SHA256 (libreoffice/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9
 SIZE (libreoffice/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf) = 207992
 SHA256 (libreoffice/dtoa-20180411.tgz) = 0082d0684f7db6f62361b76c4b7faba19e0c7ce5cb8e36c4b65fea8281e711b4
 SIZE (libreoffice/dtoa-20180411.tgz) = 48893
+SHA256 (libreoffice/pdfium-4699.tar.bz2) = ee80fe0a3b20ef5c5babc494cd655d1b1a0bdec710acb04524789df500c563bf
+SIZE (libreoffice/pdfium-4699.tar.bz2) = 8780890
 SHA256 (libreoffice/skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz) = 97e859e8467eca9d2441cd23079b61c2c3863b5687620f18cc31a9f966740177
 SIZE (libreoffice/skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz) = 11826600
 SHA256 (libreoffice/libcuckoo-93217f8d391718380c508a722ab9acd5e9081233.tar.gz) = 471dd83a813ed2816c2246c373004470ad0f6612c7ce72038929dc5161cdd58e

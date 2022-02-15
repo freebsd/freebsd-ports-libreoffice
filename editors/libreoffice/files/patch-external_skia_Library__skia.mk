@@ -1,6 +1,6 @@
---- external/skia/Library_skia.mk.orig	2020-11-22 14:05:28 UTC
+--- external/skia/Library_skia.mk.orig	2022-01-26 14:35:29 UTC
 +++ external/skia/Library_skia.mk
-@@ -71,7 +71,7 @@ $(eval $(call gb_Library_use_externals,skia,\
+@@ -95,7 +95,7 @@ $(eval $(call gb_Library_use_externals,skia,\
      libpng \
  ))
  
