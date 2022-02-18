@@ -1,3 +1,4 @@
+devel/cppunit
 devel/liborcus
 devel/mdds
 graphics/libetonyek01
