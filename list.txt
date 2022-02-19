@@ -1,11 +1,4 @@
-devel/cppunit
-devel/liborcus
 devel/mdds
-graphics/libetonyek01
-graphics/libgltf
-textproc/libixion
-textproc/libmwaw03
-textproc/libnumbertext
 
 arabic/libreoffice
 chinese/libreoffice-zh_CN
