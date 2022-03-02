@@ -29,7 +29,6 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		coreutils>=8.23:sysutils/coreutils \
 		flex>=0.26:textproc/flex
 LIB_DEPENDS=	libapr-1.so:devel/apr1 \
-		libabsl_strings.so:devel/abseil \
 		libboost_date_time.so:devel/boost-libs \
 		libbox2d.so:misc/box2d \
 		libicutu.so:devel/icu \
@@ -46,7 +45,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libfreehand-0.1.so:graphics/libfreehand \
 		libwpg-0.3.so:graphics/libwpg03 \
 		libzmf-0.0.so:graphics/libzmf \
-		libopenjp2.so:graphics/openjpeg \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
 		libqrcodegencpp.so:graphics/qr-code-generator \
@@ -98,7 +96,6 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
-DISTFILES+=	pdfium-4699.tar.bz2:src
 DISTFILES+=	skia-m97-a7230803d64ae9d44f4e1282444801119a3ae967.tar.xz:src
 DISTFILES+=	libcuckoo-93217f8d391718380c508a722ab9acd5e9081233.tar.gz:src
 
@@ -125,15 +122,16 @@ USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
 
-OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF5 LTO MMEDIA PGSQL MARIADB QT5 SDK TEST WEBDAV
-OPTIONS_DEFAULT=	CUPS DOCS JAVA MMEDIA QT5
-OPTIONS_EXCLUDE=	GTK4
+OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF5 LTO MMEDIA PDFIUM PGSQL MARIADB QT5 SDK TEST WEBDAV
+OPTIONS_DEFAULT=	CUPS DOCS JAVA MMEDIA PDFIUM QT5
+#OPTIONS_EXCLUDE=	GTK4
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
 GTK4_DESC=	GTK+ 4 GUI toolkit support (broken)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
 KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 MMEDIA_DESC=	Enable multimedia backend for Impress
+PDFIUM_DESC=	Enable PDFium secure engine
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 MARIADB_DESC=	Build with MariaDB/MySQL-SDBC driver
 QT5_DESC=	Qt5 GUI toolkit support (default visual style)
@@ -212,6 +210,11 @@ LTO_CONFIGURE_ENABLE=	lto
 
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 MMEDIA_USE=	GSTREAMER1=yes
+
+PDFIUM_CONFIGURE_ENABLE=	pdfium
+PDFIUM_DISTFILES=	pdfium-4699.tar.bz2:src
+PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
+			libopenjp2.so:graphics/openjpeg
 
 PGSQL_CONFIGURE_ENABLE=	postgresql-sdbc
 PGSQL_CONFIGURE_WITH=	gssapi krb5
