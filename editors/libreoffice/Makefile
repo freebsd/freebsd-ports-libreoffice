@@ -84,7 +84,15 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libZXing.so:textproc/zxing-cpp \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libxcb-icccm.so:x11/xcb-util-wm \
-		libserf-1.so:www/serf
+		libserf-1.so:www/serf \
+		${LIB_DEPENDS_${ARCH}}
+LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_armv7=	libunwind.so:devel/libunwind
+LIB_DEPENDS_i386=	libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc64=	libunwind.so:devel/libunwind
+LIB_DEPENDS_powerpc64le=	libunwind.so:devel/libunwind
+
 RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/Caladea/Caladea-Bold.ttf:x11-fonts/crosextrafonts-caladea-ttf \
 		${LOCALBASE}/share/fonts/Carlito/Carlito-Bold.ttf:x11-fonts/crosextrafonts-carlito-ttf \
