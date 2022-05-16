@@ -1,6 +1,6 @@
---- configure.orig	2022-01-26 14:39:31 UTC
+--- configure.orig	2022-05-12 13:56:44 UTC
 +++ configure
-@@ -14488,6 +14488,11 @@ freebsd*)
+@@ -14668,6 +14668,11 @@ freebsd*)
          RTL_ARCH=PowerPC_64
          PLATFORMID=freebsd_powerpc64
          ;;
@@ -12,16 +12,7 @@
      powerpc|powerpcspe)
          CPUNAME=POWERPC
          RTL_ARCH=PowerPC
-@@ -36188,7 +36193,7 @@ else $as_nop
-   as_fn_error $? "zxing headers not found." "$LINENO" 5
- fi
- 
--        ZXING_CFLAGS=-I/usr/include/ZXing
-+        ZXING_CFLAGS=-I/usr/local/include/ZXing
-         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for main in -lZXing" >&5
- printf %s "checking for main in -lZXing... " >&6; }
- if test ${ac_cv_lib_ZXing_main+y}
-@@ -43445,7 +43450,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
+@@ -45202,7 +45207,7 @@ if test -z "$SHA256SUM"; then
  done
  
  if test -z "$SHA256SUM"; then
