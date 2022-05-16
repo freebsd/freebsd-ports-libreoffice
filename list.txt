@@ -1,3 +1,5 @@
+devel/mdds
+
 arabic/libreoffice
 chinese/libreoffice-zh_CN
 chinese/libreoffice-zh_TW
