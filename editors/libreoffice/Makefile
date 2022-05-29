@@ -237,7 +237,7 @@ SDK_CONFIGURE_ON=	--with-doxygen=${LOCALBASE}/bin/doxygen
 SDK_DISTFILES=	185d60944ea767075d27247c3162b3bc-unowinreg.dll:ext
 
 TEST_ALL_TARGET=	build
-TEST_ALL_TARGET_OFF=	build-nocheck
+TEST_ALL_TARGET_OFF=	build
 TEST_CONFIGURE_ENABLE=	cve-tests
 
 WEBDAV_CONFIGURE_ON=	--with-webdav=neon
@@ -270,10 +270,13 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-cuckoo \
 		--with-system-curl \
 		--with-system-dicts \
+		--with-system-dragonbox=no \
 		--with-system-gpgmepp \
+		--with-system-libfixmath=no \
 		--with-system-libs \
 		--with-system-libxml \
 		--with-system-mdds \
+		--with-system-nss \
 		--with-system-openjpeg \
 		--with-system-orcus \
 		--with-system-ucpp \
@@ -293,7 +296,8 @@ CONFIGURE_ENV=	DMAKE=${LOCALBASE}/bin/dmake \
 		ICU_LIBS="`icu-config --ldflags`" \
 		PYTHON_CFLAGS="`${PYTHON_VERSION}-config --cflags`" \
 		PYTHON_LIBS="`${PYTHON_VERSION}-config --libs`" \
-		ZXING_CFLAGS=-I/usr/local/include/ZXing \
+		ZXING_CFLAGS="-I${LOCALBASE}/include/ZXing \
+		CPLUS_INCLUDE_PATH="-I${LOCALBASE}/include \
 		ac_cv_path_SED=${LOCALBASE}/bin/gsed
 
 CONFIGURE_SHELL=	${LOCALBASE}/bin/bash
@@ -313,7 +317,7 @@ MAKE_ENV+=	verbose=1
     (${OSVERSION} >= 1300525 && ${OSVERSION} < 1301000) || \
     (${OSVERSION} >= 1301500 && ${OSVERSION} < 1301502) || \
     (${OSVERSION} >= 1400051 && ${OSVERSION} < 1400057))
-BROKEN= please update FreeBSD base system first to fix an ABI incompatibility
+BROKEN=	please update FreeBSD base system first to fix an ABI incompatibility
 .endif
 
 .if ${ARCH:Mpowerpc*}

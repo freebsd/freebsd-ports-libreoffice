@@ -12,6 +12,15 @@
      powerpc|powerpcspe)
          CPUNAME=POWERPC
          RTL_ARCH=PowerPC
+@@ -37451,7 +37456,7 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+         save_CXXFLAGS=$CXXFLAGS
+         save_IFS=$IFS
+         IFS=$P_SEP
+-        for i in $CPLUS_INCLUDE_PATH /usr/include; do
++        for i in $CPLUS_INCLUDE_PATH /usr/local/include /usr/include; do
+                                                                         IFS=$save_IFS
+                                     if test -z "$i"; then
+                 continue
 @@ -45202,7 +45207,7 @@ if test -z "$SHA256SUM"; then
  done
  
