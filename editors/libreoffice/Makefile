@@ -333,6 +333,7 @@ CONFIGURE_ARGS+=	--enable-gtk3-kde5
 .endif
 
 .if ${PORT_OPTIONS:MLTO} && ${CHOSEN_COMPILER_TYPE} == clang
+LLVM_DEFAULT=	13
 CPP=	${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
 CC=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}
 CXX=	${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
