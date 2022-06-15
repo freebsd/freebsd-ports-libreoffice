@@ -1,7 +1,7 @@
 Index: external/pdfium/pdfium-bsd.patch
 --- external/pdfium/pdfium-bsd.patch.orig	2022-02-15 12:21:30 UTC
 +++ external/pdfium/pdfium-bsd.patch
-@@ -0,0 +1,45 @@
+@@ -0,0 +1,33 @@
 +--- core/fxcrt/cfx_datetime.cpp.orig	Thu Feb  3 17:25:02 2022
 ++++ core/fxcrt/cfx_datetime.cpp	Thu Feb
 +@@ -11,7 +11,7 @@
@@ -16,7 +16,7 @@ Index: external/pdfium/pdfium-bsd.patch
 +--- core/fxge/linux/fx_linux_impl.cpp.orig	Thu Feb  3 17:25:22 2022
 ++++ core/fxge/linux/fx_linux_impl.cpp	Thu Feb
 +@@ -18,7 +18,7 @@
-+ #include "third_party/base/cxx17_backports.h"
++ #include "third_party/base/check.h"
 + 
 + #if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !defined(OS_FUCHSIA) && \
 +-    !defined(OS_ASMJS)
@@ -24,18 +24,6 @@ Index: external/pdfium/pdfium-bsd.patch
 + #error "Included on the wrong platform"
 + #endif
 + 
-+@@ -165,9 +165,8 @@
-+   std::unique_ptr<SystemFontInfoIface> CreateDefaultSystemFontInfo() override {
-+     auto pInfo = std::make_unique<CFX_LinuxFontInfo>();
-+     if (!pInfo->ParseFontCfg(CFX_GEModule::Get()->GetUserFontPaths())) {
-+-      pInfo->AddPath("/usr/share/fonts");
-+-      pInfo->AddPath("/usr/share/X11/fonts/Type1");
-+-      pInfo->AddPath("/usr/share/X11/fonts/TTF");
-++      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/Type1");
-++      pInfo->AddPath("/usr/X11R6/lib/X11/fonts/TTF");
-+       pInfo->AddPath("/usr/local/share/fonts");
-+     }
-+     return pInfo;
 +--- core/fxge/cfx_fontmapper.cpp.orig	Thu Feb  3 17:25:53 2022
 ++++ core/fxge/cfx_fontmapper.cpp	Thu Feb
 +@@ -155,7 +155,7 @@ constexpr AltFontFamily kAltFontFamilies[] = {
