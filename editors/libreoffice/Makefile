@@ -126,7 +126,9 @@ USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
 
-OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF5 LTO MMEDIA PDFIUM PGSQL MARIADB QT5 SDK TEST WEBDAV
+OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA KF5 LTO MMEDIA PDFIUM PGSQL MARIADB SDK TEST WEBDAV
+OPTIONS_RADIO=	QT
+OPTIONS_RADIO_QT=	QT5 QT6
 OPTIONS_DEFAULT=	CUPS DOCS JAVA MMEDIA PDFIUM QT5
 #OPTIONS_EXCLUDE=	GTK4
 
@@ -138,7 +140,9 @@ MMEDIA_DESC=	Enable multimedia backend for Impress
 PDFIUM_DESC=	Enable PDFium secure engine
 PGSQL_DESC=	Build with PostgreSQL-SDBC driver
 MARIADB_DESC=	Build with MariaDB/MySQL-SDBC driver
+QT_DESC=	Select Qt GUI engine version
 QT5_DESC=	Qt5 GUI toolkit support (default visual style)
+QT6_DESC=	Qt6 GUI toolkit support (experimental visual style)
 SDK_DESC=	Build with SDK
 TEST_DESC=	Run all regression tests
 WEBDAV_DESC=	Enable WebDAV protocol
@@ -230,6 +234,13 @@ MARIADB_USES=	mysql:client
 QT5_CONFIGURE_ENABLE=	qt5
 QT5_USE=	qt=buildtools_build,core,gui,network,qmake_build,widgets,x11extras
 QT5_USES=	qt:5
+
+QT6_CONFIGURE_ENABLE=	qt6
+QT6_CONFIGURE_ENV=	QMAKE6=${QMAKE} MOC6=${MOC}
+QT6_PREVENTS=	KF5
+QT6_PREVENTS_MSG=	KF5 support require Qt5 engine
+QT6_USE=	qt=base,declarative,tools_build
+QT6_USES=	qt:6
 
 SDK_BUILD_DEPENDS=	doxygen:devel/doxygen
 SDK_CONFIGURE_ENABLE=	odk
