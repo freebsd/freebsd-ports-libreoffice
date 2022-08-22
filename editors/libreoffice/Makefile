@@ -236,10 +236,10 @@ QT5_USE=	qt=buildtools_build,core,gui,network,qmake_build,widgets,x11extras
 QT5_USES=	qt:5
 
 QT6_CONFIGURE_ENABLE=	qt6
-QT6_CONFIGURE_ENV=	QMAKE6=${QMAKE} MOC6=${MOC}
+QT6_CONFIGURE_ENV=	QMAKE6=${QMAKE} MOC6=${MOC} PATH="${QT_TOOLDIR}:${PATH}"
 QT6_PREVENTS=	KF5
 QT6_PREVENTS_MSG=	KF5 support require Qt5 engine
-QT6_USE=	qt=base,declarative,tools_build
+QT6_USE=	qt=base,declarative_build,tools_build
 QT6_USES=	qt:6
 
 SDK_BUILD_DEPENDS=	doxygen:devel/doxygen
