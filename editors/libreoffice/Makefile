@@ -10,8 +10,8 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	libreoffice
 EXTRACT_ONLY:=	${DISTFILES}
 
-PATCH_SITES=	https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/libreoffice-fresh/trunk/
-PATCHFILES=	libreoffice-poppler-22.09.0.patch:-p1
+#PATCH_SITES=	https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/libreoffice-fresh/trunk/
+#PATCHFILES=	libreoffice-poppler-22.09.0.patch:-p1
 
 COMMENT=	Full integrated office productivity suite
 WWW?=		https://www.libreoffice.org/
@@ -350,7 +350,7 @@ CONFIGURE_ARGS+=	--disable-skia
 CONFIGURE_ARGS+=	--enable-gtk3-kde5
 .endif
 
-.if ${PORT_OPTIONS:MLTO} && ${CHOSEN_COMPILER_TYPE} == clang
+.if ${PORT_OPTIONS:MLTO} && ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 130
 LLVM_DEFAULT=	13
 CPP=	${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
 CC=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}
