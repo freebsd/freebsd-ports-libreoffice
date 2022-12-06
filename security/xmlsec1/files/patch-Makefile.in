@@ -1,0 +1,11 @@
+--- Makefile.in.orig	2022-05-06 17:33:38 UTC
++++ Makefile.in
+@@ -490,7 +490,7 @@ DEFAULT_CRYPTO = @XMLSEC_DEFAULT_CRYPTO@
+ bin_SCRIPTS = xmlsec1-config
+ pkgconfig_DATA = xmlsec1.pc @XMLSEC_CRYPTO_PC_FILES_LIST@
+ pkgconfigdir = $(prefix)/libdata/pkgconfig
+-confexecdir = $(libdir)
++confexecdir = $(sysconfdir)
+ confexec_DATA = xmlsec1Conf.sh
+ m4datadir = $(datadir)/aclocal
+ m4data_DATA = xmlsec1.m4
