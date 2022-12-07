@@ -10,9 +10,6 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	libreoffice
 EXTRACT_ONLY:=	${DISTFILES}
 
-#PATCH_SITES=	https://raw.githubusercontent.com/archlinux/svntogit-packages/packages/libreoffice-fresh/trunk/
-#PATCHFILES=	libreoffice-poppler-22.09.0.patch:-p1
-
 COMMENT=	Full integrated office productivity suite
 WWW?=		https://www.libreoffice.org/
 
@@ -104,7 +101,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
-DISTFILES+=	dragonbox-1.1.0.tar.gz:src
+DISTFILES+=	dragonbox-1.1.3.tar.gz:src
 DISTFILES+=	skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
@@ -224,7 +221,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-5058.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-5408.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -388,7 +385,7 @@ post-install:
 .endfor
 
 post-install-SDK-on:
-.for subdir in include share share/doc share/idl
+.for subdir in include share share/doc
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s ${subdir}/libreoffice -not -type d >> ${TMPPLIST}
 .endfor
