@@ -1,3 +1,5 @@
+security/xmlsec1
+
 arabic/libreoffice
 chinese/libreoffice-zh_CN
 chinese/libreoffice-zh_TW
