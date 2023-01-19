@@ -10,9 +10,6 @@ DISTFILES=	${PORTNAME}-${DISTVERSION}${EXTRACT_SUFX} \
 DIST_SUBDIR=	libreoffice
 EXTRACT_ONLY:=	${DISTFILES}
 
-PATCH_SITES+=	https://github.com/LibreOffice/core/commit/
-PATCHFILES+=	15e5d86cc55ad94ac946e04d5e25b84be5810970.diff:-p1
-
 COMMENT=	Full integrated office productivity suite
 WWW?=		https://www.libreoffice.org/
 
@@ -290,6 +287,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-gpgmepp \
 		--with-system-libfixmath=no \
 		--with-system-libs \
+		--with-system-libtiff \
 		--with-system-libxml \
 		--with-system-mdds \
 		--with-system-nss \
