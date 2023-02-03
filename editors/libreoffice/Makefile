@@ -322,6 +322,8 @@ MAKE_ENV+=	GNUSED=${LOCALBASE}/bin/gsed
 MAKE_ENV+=	DISPLAY=
 MAKE_ENV+=	verbose=1
 
+BINARY_ALIAS=	sed=gsed
+
 #MAKE_JOBS_UNSAFE=	yes
 
 .include <bsd.port.options.mk>
