@@ -50,7 +50,6 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libzmf-0.0.so:graphics/libzmf \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
-		libqrcodegencpp.so:graphics/qr-code-generator \
 		libwebp.so:graphics/webp \
 		liblpsolve55.so:math/lp_solve \
 		libcmis-0.5.so:net/libcmis \
