@@ -118,11 +118,10 @@ SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
 USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
-		gettext gl gmake gnome jpeg localbase:ldflags perl5 pkgconfig \
+		gettext gl gmake gnome jpeg ldap localbase:ldflags perl5 pkgconfig \
 		python:3.8+ shebangfix shared-mime-info ssl tar:xz xorg
 USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt
-USE_OPENLDAP=	yes
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
 
@@ -133,7 +132,7 @@ OPTIONS_DEFAULT=	CUPS DOCS JAVA MMEDIA PDFIUM QT5
 #OPTIONS_EXCLUDE=	GTK4
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
-GTK4_DESC=	GTK+ 4 GUI toolkit support (broken)
+GTK4_DESC=	GTK+ 4 GUI toolkit support (experimental, broken)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
 KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 MMEDIA_DESC=	Enable multimedia backend for Impress
