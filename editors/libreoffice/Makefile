@@ -15,13 +15,14 @@ WWW?=		https://www.libreoffice.org/
 
 BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		zip:archivers/zip \
+		pigz:archivers/pigz \
 		${LOCALBASE}/include/sqlext.h:databases/unixODBC \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		gperf>=3.1:devel/gperf \
 		${LOCALBASE}/include/libcuckoo/cuckoohash_map.hh:devel/libcuckoo \
 		libunwind>=20211201_1:devel/libunwind \
-		mdds>=2.0:devel/mdds \
+		mdds>=2.1:devel/mdds \
 		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
@@ -37,7 +38,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
 		libltdl.so:devel/libltdl \
-		liborcus-0.17.so:devel/liborcus \
+		liborcus-0.18.so:devel/liborcus \
 		libplds4.so:devel/nspr \
 		libcurl.so:ftp/curl \
 		libgraphite2.so:graphics/graphite2 \
@@ -101,7 +102,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
-DISTFILES+=	skia-m103-b301ff025004c9cd82816c86c547588e6c24b466.tar.xz:src
+DISTFILES+=	skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar.xz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -222,7 +223,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-5408.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-5636.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
