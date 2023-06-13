@@ -223,7 +223,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-5636.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-5778.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
