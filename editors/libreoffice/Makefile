@@ -102,6 +102,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	dtoa-20180411.tgz:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
+DISTFILES+=	frozen-1.1.1.tar.gz:src
 DISTFILES+=	skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar.xz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
@@ -286,6 +287,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-curl \
 		--with-system-dicts \
 		--with-system-dragonbox=no \
+		--with-system-frozen=no \
 		--with-system-gpgmepp \
 		--with-system-libfixmath=no \
 		--with-system-libs \
