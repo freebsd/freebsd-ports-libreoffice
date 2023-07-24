@@ -1,4 +1,4 @@
-TIMESTAMP = 1690213210
+TIMESTAMP = 1690216848
 SHA256 (libreoffice/libreoffice-7.5.5.2.tar.xz) = 6628dfd2a21041a7c5bb6d72733e0fd52efa7959c95084fcd4d96cc4a61b0561
 SIZE (libreoffice/libreoffice-7.5.5.2.tar.xz) = 270545744
 SHA256 (libreoffice/libreoffice-help-7.5.5.2.tar.xz) = 1de834979bf25c3c6f368362dd20c95d0bee514a42eee903a32188d40488aa62
@@ -45,7 +45,7 @@ SHA256 (libreoffice/eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip) = 75c803
 SIZE (libreoffice/eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip) = 427800
 SHA256 (libreoffice/f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip) = 05640a1f6805b2b2d7e2cb9c50db9a5cb084e3c52ab1a71ce015239b4a1d4343
 SIZE (libreoffice/f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip) = 211919
-SHA256 (libreoffice/pdfium-5408.tar.bz2) = 7db59b1e91f2bc0ab4c5e19d1a4f881e6a47dbb0d3b7e980a7358225b12a0f35
-SIZE (libreoffice/pdfium-5408.tar.bz2) = 10077997
+SHA256 (libreoffice/pdfium-5778.tar.bz2) = b1052ff24e9ffb11af017c444bb0f6ad508d64c9a0fb88cacb0e8210245dde06
+SIZE (libreoffice/pdfium-5778.tar.bz2) = 9532052
 SHA256 (libreoffice/185d60944ea767075d27247c3162b3bc-unowinreg.dll) = eafde646a7dbe46d20c291685b0beac2382174d78d66ee990e229a1bf6e6cec6
 SIZE (libreoffice/185d60944ea767075d27247c3162b3bc-unowinreg.dll) = 12288
