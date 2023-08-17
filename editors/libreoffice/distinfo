@@ -1,8 +1,8 @@
-TIMESTAMP = 1691133941
-SHA256 (libreoffice/libreoffice-7.6.0.2.tar.xz) = b782a7c1189efdb3205e58423fde9241cf37ebfbb3da4c7300f2de6bb45147cd
-SIZE (libreoffice/libreoffice-7.6.0.2.tar.xz) = 279991368
-SHA256 (libreoffice/libreoffice-help-7.6.0.2.tar.xz) = f7ce1b54bf03b54bf788d8bd81241e38060362e983883b202f0c453e7622f9ea
-SIZE (libreoffice/libreoffice-help-7.6.0.2.tar.xz) = 166959328
+TIMESTAMP = 1692099199
+SHA256 (libreoffice/libreoffice-7.6.0.3.tar.xz) = 07f33f11a75b72a3044749d4f2f7d02a0fd79eaed4fb73e618ec5fe3576d0c25
+SIZE (libreoffice/libreoffice-7.6.0.3.tar.xz) = 280073924
+SHA256 (libreoffice/libreoffice-help-7.6.0.3.tar.xz) = 210f18ff60e93d366856d84e714d3fd6f184f399b5163afc92b7e11155cbe768
+SIZE (libreoffice/libreoffice-help-7.6.0.3.tar.xz) = 166959212
 SHA256 (libreoffice/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf) = f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140
 SIZE (libreoffice/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf) = 207992
 SHA256 (libreoffice/dtoa-20180411.tgz) = 0082d0684f7db6f62361b76c4b7faba19e0c7ce5cb8e36c4b65fea8281e711b4
