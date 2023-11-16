@@ -51,9 +51,10 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libzmf-0.0.so:graphics/libzmf \
 		libpng.so:graphics/png \
 		libpoppler.so:graphics/poppler \
+		libtiff.so:graphics/tiff \
 		libwebp.so:graphics/webp \
 		liblpsolve55.so:math/lp_solve \
-		libcmis-0.5.so:net/libcmis \
+		libcmis-0.6.so:net/libcmis \
 		libfreetype.so:print/freetype2 \
 		libharfbuzz.so:print/harfbuzz \
 		libharfbuzz-icu.so:print/harfbuzz-icu \
@@ -389,6 +390,11 @@ post-install:
 .endfor
 
 post-install-SDK-on:
+.for subdir in share share/doc
+	@cd ${STAGEDIR}${PREFIX} && \
+	${FIND} -s ${subdir}/libreoffice -type d -empty \
+	    -exec ${ECHO_CMD} "@dir {}" \; >> ${TMPPLIST}
+.endfor
 .for subdir in include share share/doc
 	@cd ${STAGEDIR}${PREFIX} && \
 	${FIND} -s ${subdir}/libreoffice -not -type d >> ${TMPPLIST}
