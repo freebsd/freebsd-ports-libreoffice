@@ -109,7 +109,8 @@ DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-ope
 DISTFILES+=	dtoa-20180411.tgz:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
 DISTFILES+=	frozen-1.1.1.tar.gz:src
-DISTFILES+=	skia-m111-a31e897fb3dcbc96b2b40999751611d029bf5404.tar.xz:src
+DISTFILES+=	skia-m116-2ddcf183eb260f63698aa74d1bb380f247ad7ccd.tar.xz:src
+DISTFILES+=	zxcvbn-c-2.5.tar.gz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
 NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
@@ -230,7 +231,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-5778.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-6060.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -305,6 +306,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-orcus \
 		--with-system-ucpp \
 		--with-system-zlib \
+		--with-system-zxcvbn=no \
 		--with-system-zxing \
 		--with-tls=nss \
 		--with-vendor="FreeBSD ports" \
