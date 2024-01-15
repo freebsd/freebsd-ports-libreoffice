@@ -62,6 +62,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgme-cpp \
+		libargon2.so:security/libargon2 \
 		libgpg-error.so:security/libgpg-error \
 		libnss3.so:security/nss \
 		libxmlsec1-nss.so:security/xmlsec1 \
@@ -243,7 +244,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-6060.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-6179.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -303,6 +304,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-os-version=${OSVERSION} \
 		--with-parallelism=${MAKE_JOBS_NUMBER} \
 		--with-system-abseil \
+		--with-system-argon2 \
 		--with-system-cppunit \
 		--with-system-cuckoo \
 		--with-system-curl \
