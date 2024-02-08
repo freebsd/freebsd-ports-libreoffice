@@ -222,7 +222,7 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:src \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:src
 JAVA_USE=	JAVA=yes
-JAVA_VARS=	JAVA_BUILD=yes JAVA_RUN=yes JAVA_VERSION=11+
+JAVA_VARS=	JAVA_BUILD=yes JAVA_RUN=yes JAVA_VERSION=17+
 
 KF5_CONFIGURE_ENABLE=	kf5
 KF5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
