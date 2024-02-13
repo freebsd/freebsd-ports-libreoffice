@@ -127,6 +127,7 @@ INSTALL_TARGET=	distro-pack-install
 SHEBANG_GLOB=	*.py
 
 GNU_CONFIGURE=	yes
+GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		autoreconf:build bison compiler:c++17-lang cpe desktop-file-utils \
 		gettext gl gmake gnome jpeg ldap localbase:ldflags perl5 pkgconfig \
 		python shebangfix shared-mime-info ssl tar:xz xorg
