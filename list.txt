@@ -42,6 +42,7 @@ editors/libreoffice-gug
 editors/libreoffice-hi
 editors/libreoffice-hr
 editors/libreoffice-hsb
+editors/libreoffice-hy
 editors/libreoffice-i18n
 editors/libreoffice-id
 editors/libreoffice-is
