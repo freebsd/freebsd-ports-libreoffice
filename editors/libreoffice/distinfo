@@ -1,8 +1,8 @@
-TIMESTAMP = 1725144579
-SHA256 (libreoffice/libreoffice-24.8.1.1.tar.xz) = fa760332004575c54e960646b58eae200fee53f1db05abbf61e0f5c4ef485e6b
-SIZE (libreoffice/libreoffice-24.8.1.1.tar.xz) = 280522588
-SHA256 (libreoffice/libreoffice-help-24.8.1.1.tar.xz) = 3753c2d490721f5e78065c851533b5359630594bb7edb60663cc57ab670fa2be
-SIZE (libreoffice/libreoffice-help-24.8.1.1.tar.xz) = 166983036
+TIMESTAMP = 1726169022
+SHA256 (libreoffice/libreoffice-24.8.1.2.tar.xz) = 884486836a6830d761252a5b53c7bc4a5eba2f6ead26d60564250910038811e7
+SIZE (libreoffice/libreoffice-24.8.1.2.tar.xz) = 280526240
+SHA256 (libreoffice/libreoffice-help-24.8.1.2.tar.xz) = 5b31c294c96b0eb744e7ae592e3c5b2caaa8dff0455f68d9c32068a4320b0650
+SIZE (libreoffice/libreoffice-help-24.8.1.2.tar.xz) = 166985796
 SHA256 (libreoffice/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf) = f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140
 SIZE (libreoffice/f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf) = 207992
 SHA256 (libreoffice/dtoa-20180411.tgz) = 0082d0684f7db6f62361b76c4b7faba19e0c7ce5cb8e36c4b65fea8281e711b4
