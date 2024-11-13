@@ -183,6 +183,10 @@ GTK3_CONFIGURE_ENABLE=	gtk3
 GTK3_USE=	GNOME=gtk30
 
 GTK4_CONFIGURE_ENABLE=	gtk4
+GTK4_LIB_DEPENDS=	libepoxy.so:graphics/libepoxy \
+			libgraphene-1.0.so:graphics/graphene \
+			libharfbuzz.so:print/harfbuzz \
+			libvulkan.so:graphics/vulkan-loader
 GTK4_USE=	GNOME=gtk40
 
 JAVA_BUILD_DEPENDS=	ant:devel/apache-ant \
@@ -269,7 +273,7 @@ QT6_CONFIGURE_ENABLE=	qt6
 QT6_CONFIGURE_ENV=	QMAKE6=${QMAKE} MOC6=${MOC} PATH="${QT_TOOLDIR}:${PATH}"
 QT6_PREVENTS=	KF5
 QT6_PREVENTS_MSG=	KF5 support require Qt5 engine
-QT6_USE=	qt=base,declarative:build,multimedia,tools:build
+QT6_USE=	qt=base,declarative,multimedia,tools:build
 QT6_USES=	qt:6
 
 SDK_BUILD_DEPENDS=	doxygen:devel/doxygen
