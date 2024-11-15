@@ -23,7 +23,6 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		${LOCALBASE}/include/libcuckoo/cuckoohash_map.hh:devel/libcuckoo \
 		mdds>=2.1:devel/mdds \
 		gpatch:devel/patch \
-		ucpp:devel/ucpp \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
@@ -329,7 +328,6 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-nss \
 		--with-system-openjpeg \
 		--with-system-orcus \
-		--with-system-ucpp \
 		--with-system-zlib \
 		--with-system-zxcvbn=no \
 		--with-system-zxing \
