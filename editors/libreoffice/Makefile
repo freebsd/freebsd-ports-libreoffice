@@ -226,7 +226,7 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip:src \
 		eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip:src \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:src \
-		Java-WebSocket-1.5.7.tar.gz:src \
+		Java-WebSocket-1.6.0.tar.gz:src \
 		bsh-2.1.1-src.zip:src \
 		rhino-1.7.15.zip:src
 JAVA_USE=	JAVA=yes
