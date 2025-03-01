@@ -11,9 +11,9 @@ task:
     image_project: freebsd-org-cloud-dev
     platform: freebsd
   matrix:
-    - name: 14.1-RELEASE
+    - name: 14.2-RELEASE
       compute_engine_instance:
-        image: family/freebsd-14-1
+        image: family/freebsd-14-2
   install_script:
     - sed -i.bak -e 's,pkg+http://pkg.FreeBSD.org/\${ABI}/quarterly,pkg+http://pkg.FreeBSD.org/\${ABI}/latest,' /etc/pkg/FreeBSD.conf
     - ASSUME_ALWAYS_YES=yes pkg bootstrap -f
