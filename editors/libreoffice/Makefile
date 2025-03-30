@@ -120,8 +120,6 @@ NOT_FOR_ARCHS_REASON=	Unsupported host_cpu
 MASTER_SITES+=	https://dev-builds.libreoffice.org/pre-releases/src/
 .endif
 
-CONFLICTS_INSTALL=	libreoffice6
-
 INSTALL_TARGET=	distro-pack-install
 
 SHEBANG_GLOB=	*.py
