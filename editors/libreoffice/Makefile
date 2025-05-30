@@ -110,7 +110,7 @@ DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-ope
 DISTFILES+=	dtoa-20180411.tgz:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
 DISTFILES+=	frozen-1.2.0.tar.gz:src
-DISTFILES+=	skia-m130-3c64459d5df2fa9794b277f0959ed8a92552bf4c.tar.xz:src
+DISTFILES+=	skia-m136-28685d899b0a35894743e2cedad4c9f525e90e1e.tar.xz:src
 DISTFILES+=	zxcvbn-c-2.5.tar.gz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
@@ -250,7 +250,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-6764.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-7012.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -400,13 +400,12 @@ post-patch:
 .if ${COMPILER_FEATURES:Mlibstdc++}
 	${REINPLACE_CMD} -e 's/gb_CC/gb_CXX/' ${WRKSRC}/solenv/gbuild/platform/unxgcc.mk
 .endif
-	${CP} ${FILESDIR}/powerpc64le-skia.patch.0 ${WRKSRC}/external/skia/
 
 pre-configure:
 	@${TOUCH} ${WRKSRC}/autogen.lastrun
 
 post-configure:
-	@${TOUCH} ${WRKSRC}/src.downloaded
+4	@${TOUCH} ${WRKSRC}/src.downloaded
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX} && \
