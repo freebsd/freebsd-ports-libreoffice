@@ -1,0 +1,30 @@
+PORTNAME=	libixion
+DISTVERSION=	0.20.0
+CATEGORIES=	textproc
+#MASTER_SITES=	https://kohei.us/files/ixion/src/
+
+MAINTAINER=	office@FreeBSD.org
+COMMENT=	General purpose formula parser, interpreter, dependency tracker
+WWW=		https://gitlab.com/ixion/ixion
+
+LICENSE=	MPL20
+LICENSE_FILE=	${WRKSRC}/LICENSE
+
+BUILD_DEPENDS=	mdds>=3.0:devel/mdds
+LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+
+USES=		autoreconf libtool localbase pathfix pkgconfig tar:xz
+USE_LDCONFIG=	yes
+
+USE_GITLAB=	yes
+GL_ACCOUNT=	ixion
+GL_PROJECT=	ixion
+
+GNU_CONFIGURE=	yes
+INSTALL_TARGET=	install-strip
+
+PLIST_SUB=	VERSION=${DISTVERSION:R}
+
+CONFIGURE_ARGS=	--disable-python
+
+.include <bsd.port.mk>
