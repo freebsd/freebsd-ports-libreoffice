@@ -405,7 +405,7 @@ pre-configure:
 	@${TOUCH} ${WRKSRC}/autogen.lastrun
 
 post-configure:
-4	@${TOUCH} ${WRKSRC}/src.downloaded
+	@${TOUCH} ${WRKSRC}/src.downloaded
 
 post-install:
 	@cd ${STAGEDIR}${PREFIX} && \
