@@ -3,6 +3,10 @@ DISTVERSION=	0.20.0
 CATEGORIES=	textproc
 #MASTER_SITES=	https://kohei.us/files/ixion/src/
 
+PATCH_SITES+=	https://gitlab.com/ixion/ixion/-/commit/
+PATCHFILES+=	bfe5ab6adadda265d575fec9c192e6f53f2ef9f5.diff:-p1 \
+		d1ee97a73027579dd988d96d7a154f38c3187f37.diff:-p1
+
 MAINTAINER=	office@FreeBSD.org
 COMMENT=	General purpose formula parser, interpreter, dependency tracker
 WWW=		https://gitlab.com/ixion/ixion
