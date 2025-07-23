@@ -11,7 +11,7 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	mdds>=3.0:devel/mdds
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs \
+LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libixion-0.20.so:textproc/libixion
 
 USES=		autoreconf compiler:c++17-lang gmake libtool localbase:ldflags \
