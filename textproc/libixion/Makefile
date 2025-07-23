@@ -11,7 +11,7 @@ LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
 BUILD_DEPENDS=	mdds>=3.0:devel/mdds
-LIB_DEPENDS=	libboost_system.so:devel/boost-libs
+LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
 USES=		autoreconf libtool localbase pathfix pkgconfig tar:xz
 USE_LDCONFIG=	yes
