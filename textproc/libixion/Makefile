@@ -14,7 +14,7 @@ WWW=		https://gitlab.com/ixion/ixion
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	mdds>=${MDDS_API}:devel/mdds
+BUILD_DEPENDS=	mdds>=${MDDS_VERSION}:devel/mdds
 LIB_DEPENDS=	libboost_filesystem.so:devel/boost-libs
 
 USES=		autoreconf libtool localbase pathfix pkgconfig tar:xz
@@ -31,9 +31,9 @@ PLIST_SUB=	VERSION=${DISTVERSION:R}
 
 CONFIGURE_ARGS=	--disable-python
 
-MDDS_API=	3.1
+MDDS_VERSION=	3.1
 
 post-patch:
-	${REINPLACE_CMD} -e 's/mdds-3.0/mdds-${MDDS_API}/' ${WRKSRC}/configure.ac
+	${REINPLACE_CMD} -e 's/mdds-3.0/mdds-${MDDS_VERSION}/' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>

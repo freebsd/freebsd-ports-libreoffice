@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		dmake:devel/dmake \
 		gperf>=3.1:devel/gperf \
 		${LOCALBASE}/include/libcuckoo/cuckoohash_map.hh:devel/libcuckoo \
-		mdds>=${MDDS_API}:devel/mdds \
+		mdds>=${MDDS_VERSION}:devel/mdds \
 		gpatch:devel/patch \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
@@ -361,7 +361,7 @@ BINARY_ALIAS=	sed=gsed
 
 PIE_UNSAFE=	yes
 #MAKE_JOBS_UNSAFE=	yes
-MDDS_API=	3.1
+MDDS_VERSION=	3.1
 
 .include <bsd.port.options.mk>
 
@@ -401,7 +401,7 @@ LDFLAGS+=	-Wl,--undefined-version
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|mdds-3.0|mdds-${MDDS_API}|g' \
+		-e 's|mdds-3.0|mdds-${MDDS_VERSION}|g' \
 		${WRKSRC}/configure
 .if ${COMPILER_FEATURES:Mlibstdc++}
 	${REINPLACE_CMD} -e 's/gb_CC/gb_CXX/' ${WRKSRC}/solenv/gbuild/platform/unxgcc.mk
