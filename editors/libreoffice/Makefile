@@ -21,7 +21,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		dmake:devel/dmake \
 		gperf>=3.1:devel/gperf \
 		${LOCALBASE}/include/libcuckoo/cuckoohash_map.hh:devel/libcuckoo \
-		mdds>=3.0:devel/mdds \
+		mdds>=${MDDS_API}:devel/mdds \
 		gpatch:devel/patch \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
@@ -133,6 +133,7 @@ USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_PERL5=	build
 USE_XORG=	ice sm x11 xaw xcb xext xinerama xrandr xrender
+USE_LOCALE?=	en_US.UTF-8
 
 USES+=		elfctl
 ELF_FEATURES=	+wxneeded:instdir/program/soffice.bin
@@ -360,6 +361,7 @@ BINARY_ALIAS=	sed=gsed
 
 PIE_UNSAFE=	yes
 #MAKE_JOBS_UNSAFE=	yes
+MDDS_API=	3.1
 
 .include <bsd.port.options.mk>
 
@@ -397,6 +399,10 @@ CXXFLAGS_WARN=	-Wshadow -Woverloaded-virtual
 LDFLAGS+=	-Wl,--undefined-version
 
 post-patch:
+	${REINPLACE_CMD} \
+		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
+		-e 's|mdds-3.0|mdds-${MDDS_API}|g' \
+		${WRKSRC}/configure
 .if ${COMPILER_FEATURES:Mlibstdc++}
 	${REINPLACE_CMD} -e 's/gb_CC/gb_CXX/' ${WRKSRC}/solenv/gbuild/platform/unxgcc.mk
 .endif
