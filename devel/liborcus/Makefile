@@ -1,5 +1,5 @@
 PORTNAME=	liborcus
-DISTVERSION=	0.20.1
+DISTVERSION=	0.20.2
 CATEGORIES=	devel misc
 #MASTER_SITES=	https://kohei.us/files/orcus/src/
 
@@ -10,7 +10,7 @@ WWW=		https://gitlab.com/orcus/orcus
 LICENSE=	MPL20
 LICENSE_FILE=	${WRKSRC}/LICENSE
 
-BUILD_DEPENDS=	mdds>=3.0:devel/mdds
+BUILD_DEPENDS=	mdds>=${MDDS_API}:devel/mdds
 LIB_DEPENDS=	libboost_date_time.so:devel/boost-libs \
 		libixion-0.20.so:textproc/libixion
 
@@ -39,5 +39,10 @@ OPTIONS_SUB=	yes
 STATIC_CONFIGURE_ENABLE=	static
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
+
+MDDS_API=	3.1
+
+post-patch:
+	${REINPLACE_CMD} -e 's/mdds-3.0/mdds-${MDDS_API}/' ${WRKSRC}/configure.ac
 
 .include <bsd.port.mk>
