@@ -1,19 +1,22 @@
 .include "${.CURDIR}/../../editors/libreoffice/Makefile.common"
 
 MASTER_SITES=	https://download.documentfoundation.org/libreoffice/${MASTER_SITE_SUBDIR}/
+
+DEB_ARCH?=	x86_64
+#DEB_ARCH?=	aarch64
 .if defined(PRERELEASE)
-MASTER_SITES+=	https://dev-builds.libreoffice.org/pre-releases/deb/x86_64/
-MASTER_SITE_SUBDIR=	testing/${LOVERSION}/deb/x86_64
+MASTER_SITES+=	https://dev-builds.libreoffice.org/pre-releases/deb/${DEB_ARCH}/
+MASTER_SITE_SUBDIR=	testing/${LOVERSION}/deb/${DEB_ARCH}
 .	if defined(DEVRELEASE)
 LO_NAME=	LibreOfficeDev
 .	else
 LO_NAME=	LibreOffice
 .	endif
-LO_I18N_FILE=	${LO_NAME}_${DISTVERSION}_Linux_x86-64_deb
+LO_I18N_FILE=	${LO_NAME}_${DISTVERSION}_Linux_${DEB_ARCH:S/_/-/}_deb
 .else
-MASTER_SITE_SUBDIR=	stable/${LOVERSION}/deb/x86_64
+MASTER_SITE_SUBDIR=	stable/${LOVERSION}/deb/${DEB_ARCH}
 LO_NAME=	LibreOffice
-LO_I18N_FILE=	${LO_NAME}_${LOVERSION}_Linux_x86-64_deb
+LO_I18N_FILE=	${LO_NAME}_${LOVERSION}_Linux_${DEB_ARCH:S/_/-/}_deb
 .endif
 PKGNAMEPREFIX=	${LO_I18N}-
 DISTFILES=	${LO_I18N_FILE}_langpack_${LO_I18N:S/_/-/}${EXTRACT_SUFX}
