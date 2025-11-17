@@ -1,3 +1,4 @@
+bin/xmlsec_unit_tests
 bin/xmlsec1
 bin/xmlsec1-config
 etc/xmlsec1Conf.sh

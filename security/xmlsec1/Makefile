@@ -1,7 +1,7 @@
 PORTNAME=	xmlsec1
-DISTVERSION=	1.3.8
+DISTVERSION=	1.3.9
 CATEGORIES=	security
-MASTER_SITES=	https://github.com/lsh123/xmlsec/releases/download/xmlsec_${DISTVERSION:S,.,_,g}/ \
+MASTER_SITES=	https://github.com/lsh123/xmlsec/releases/download/${DISTVERSION}/ \
 		https://www.aleksey.com/xmlsec/download/
 
 MAINTAINER=	hrs@FreeBSD.org
