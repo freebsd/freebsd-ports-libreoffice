@@ -25,19 +25,21 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		gpatch:devel/patch \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
+		fast_float>=0:math/fast_float \
 		${LOCALBASE}/include/glm/glm.hpp:math/glm \
 		bash:shells/bash \
 		gsed:textproc/gsed \
 		${PYTHON_PKGNAMEPREFIX}lxml>0:devel/py-lxml@${PY_FLAVOR} \
 		coreutils>=8.23:sysutils/coreutils \
 		flex>=0.26:textproc/flex
-LIB_DEPENDS=	libapr-1.so:devel/apr1 \
+LIB_DEPENDS=	libzstd.so:archivers/zstd \
+		libapr-1.so:devel/apr1 \
 		libboost_date_time.so:devel/boost-libs \
 		libbox2d.so:misc/box2d \
 		libicutu.so:devel/icu \
 		liblangtag.so:devel/liblangtag \
 		libltdl.so:devel/libltdl \
-		liborcus-0.20.so:devel/liborcus \
+		liborcus-0.21.so:devel/liborcus \
 		libplds4.so:devel/nspr \
 		libcurl.so:ftp/curl \
 		libgraphite2.so:graphics/graphite2 \
@@ -83,6 +85,7 @@ LIB_DEPENDS=	libapr-1.so:devel/apr1 \
 		libvisio-0.1.so:textproc/libvisio01 \
 		libwpd-0.10.so:textproc/libwpd010 \
 		libwps-0.4.so:textproc/libwps \
+		libmd4c.so:textproc/md4c \
 		libmythes-1.2.so:textproc/mythes \
 		libraptor2.so:textproc/raptor2 \
 		librdf.so:textproc/redland \
@@ -107,10 +110,12 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 		${LOCALBASE}/share/fonts/LinLibertineG/LinLibertine_DR_G.ttf:x11-fonts/linuxlibertine-g
 
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
-DISTFILES+=	dtoa-20180411.tgz:src
+DISTFILES+=	afdko-4.0.2.tar.gz:src
+DISTFILES+=	antlr4-cpp-runtime-4.13.2-source.zip:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
 DISTFILES+=	frozen-1.2.0.tar.gz:src
-DISTFILES+=	skia-m136-28685d899b0a35894743e2cedad4c9f525e90e1e.tar.xz:src
+DISTFILES+=	skia-m142-f4ed99d2443962782cf5f8b4dd27179f131e7cbe.tar.xz:src
+DISTFILES+=	y-crdt-0.23.5.tar.gz:src
 DISTFILES+=	zxcvbn-c-2.6.tar.gz:src
 
 NOT_FOR_ARCHS=		armv6 armv7
@@ -128,7 +133,7 @@ GNU_CONFIGURE=	yes
 GNU_CONFIGURE_MANPREFIX=${PREFIX}/share
 USES=		autoreconf:build bison compiler:c++20-lang cpe desktop-file-utils \
 		gettext gl gmake gnome jpeg ldap localbase:ldflags perl5 pkgconfig \
-		python shebangfix shared-mime-info ssl tar:xz xorg
+		python shebangfix shared-mime-info sqlite ssl tar:xz xorg
 USE_GL=		gl glew glu
 USE_GNOME=	cairo glib20 libxml2 libxslt
 USE_PERL5=	build
@@ -251,7 +256,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-7012.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-7471.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
@@ -312,6 +317,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-parallelism=${MAKE_JOBS_NUMBER} \
 		--with-system-abseil \
 		--with-system-argon2 \
+		--with-system-afdko=no \
 		--with-system-cppunit \
 		--with-system-cuckoo \
 		--with-system-curl \
@@ -323,10 +329,12 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-system-libs \
 		--with-system-libtiff \
 		--with-system-libxml \
+		--with-system-md4c \
 		--with-system-mdds \
 		--with-system-nss \
 		--with-system-openjpeg \
 		--with-system-orcus \
+		--with-system-sqlite3 \
 		--with-system-zlib \
 		--with-system-zxcvbn=no \
 		--with-system-zxing \
