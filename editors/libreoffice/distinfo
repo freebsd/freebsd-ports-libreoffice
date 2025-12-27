@@ -1,4 +1,4 @@
-TIMESTAMP = 1766810962
+TIMESTAMP = 1766830647
 SHA256 (libreoffice/libreoffice-25.8.4.2.tar.xz) = 1a33dd5888e0b5db648f608e1c6ed7581ec1784f565f38e5c537efa09eacf419
 SIZE (libreoffice/libreoffice-25.8.4.2.tar.xz) = 286883588
 SHA256 (libreoffice/libreoffice-help-25.8.4.2.tar.xz) = 851eb8cee3344999a90fb740620c64261761f085ac3ab48c76ac3a3545102908
@@ -49,8 +49,8 @@ SHA256 (libreoffice/Java-WebSocket-1.6.0.tar.gz) = f3ce29efde338707241d47ab4784b
 SIZE (libreoffice/Java-WebSocket-1.6.0.tar.gz) = 190202
 SHA256 (libreoffice/bsh-2.1.1-src.zip) = 2248387ceaa319840434a3547a8b2fec12f95a8418ee039ce5ff5726053a139c
 SIZE (libreoffice/bsh-2.1.1-src.zip) = 2208737
-SHA256 (libreoffice/rhino-1.7.15.zip) = 42fce6baf1bf789b62bf938b8e8ec18a1ac92c989dd6e7221e9531454cbd97fa
-SIZE (libreoffice/rhino-1.7.15.zip) = 5856077
+SHA256 (libreoffice/rhino-1.7.15.1.zip) = 65599965d82c0e60332601d511dacb0241e796cabfa5550c72bb80c4bf89e8ad
+SIZE (libreoffice/rhino-1.7.15.1.zip) = 5878840
 SHA256 (libreoffice/pdfium-7012.tar.bz2) = e647ca4fcc2c91d9dca717452e1b1be1ab6155ac4977dca716041652c7b10bdd
 SIZE (libreoffice/pdfium-7012.tar.bz2) = 11270991
 SHA256 (libreoffice/185d60944ea767075d27247c3162b3bc-unowinreg.dll) = eafde646a7dbe46d20c291685b0beac2382174d78d66ee990e229a1bf6e6cec6
