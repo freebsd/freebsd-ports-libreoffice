@@ -220,7 +220,6 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		35c94d2df8893241173de1d16b6034c0-swingExSrc.zip:src \
 		39bb3fcea1514f1369fcfc87542390fd-sacjava-1.3.zip:src \
 		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:src \
-		8249374c274932a21846fa7629c2aa9b-officeotron-0.7.4-master.jar:ext \
 		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:src \
 		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:src \
 		a084cd548b586552cb7d3ee51f1af969-odfvalidator-1.1.8-incubating-SNAPSHOT-jar-with-dependencies.jar:ext \
@@ -232,7 +231,8 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:src \
 		Java-WebSocket-1.6.0.tar.gz:src \
 		bsh-2.1.1-src.zip:src \
-		rhino-1.7.15.zip:src
+		officeotron-0.8.5.jar:ext \
+		rhino-1.7.15.1.zip:src
 JAVA_USES=	java
 JAVA_VARS=	JAVA_VERSION=17+ NO_SHLIB_REQUIRES_GLOB=libjawt.so
 
