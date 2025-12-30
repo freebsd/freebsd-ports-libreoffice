@@ -64,7 +64,6 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd \
 		libassuan.so:security/libassuan \
 		libgpgme.so:security/gpgme \
 		libgpgmepp.so:security/gpgmepp \
-		libargon2.so:security/libargon2 \
 		libgpg-error.so:security/libgpg-error \
 		libnss3.so:security/nss \
 		libxmlsec1-nss.so:security/xmlsec1 \
@@ -93,6 +92,7 @@ LIB_DEPENDS=	libzstd.so:archivers/zstd \
 		libfontconfig.so:x11-fonts/fontconfig \
 		libxcb-icccm.so:x11/xcb-util-wm \
 		libserf-1.so:www/serf
+#		libargon2.so:security/libargon2 \
 LIB_DEPENDS+=	${LIB_DEPENDS_${ARCH}}
 LIB_DEPENDS_aarch64=	libunwind.so:devel/libunwind
 LIB_DEPENDS_amd64=	libunwind.so:devel/libunwind
@@ -112,6 +112,7 @@ RUN_DEPENDS=	xdg-open:devel/xdg-utils \
 DISTFILES+=	f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf:ext
 DISTFILES+=	afdko-4.0.3.tar.gz:src
 DISTFILES+=	antlr4-cpp-runtime-4.13.2-source.zip:src
+DISTFILES+=	phc-winner-argon2-20190702.tar.gz:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
 DISTFILES+=	frozen-1.2.0.tar.gz:src
 DISTFILES+=	skia-m142-f4ed99d2443962782cf5f8b4dd27179f131e7cbe.tar.xz:src
@@ -316,7 +317,7 @@ CONFIGURE_ARGS=	--disable-dependency-tracking \
 		--with-os-version=${OSVERSION} \
 		--with-parallelism=${MAKE_JOBS_NUMBER} \
 		--with-system-abseil \
-		--with-system-argon2 \
+		--with-system-argon2=no \
 		--with-system-afdko=no \
 		--with-system-cppunit \
 		--with-system-cuckoo \
