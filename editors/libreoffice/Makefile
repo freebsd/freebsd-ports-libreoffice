@@ -359,7 +359,8 @@ BINARY_ALIAS=	sed=gsed
 
 PIE_UNSAFE=	yes
 #MAKE_JOBS_UNSAFE=	yes
-MDDS_VERSION=	3.1
+MDDS_VERSION=	${MDDS_API_VERSION}
+.include "${.CURDIR}/../../devel/mdds/Makefile.version"
 
 .include <bsd.port.options.mk>
 
