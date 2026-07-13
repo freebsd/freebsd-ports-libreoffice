@@ -223,7 +223,7 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		odfvalidator-0.13.0-jar-with-dependencies.jar:ext \
 		officeotron-0.8.8.jar:ext \
 		rhino-1.7.15.1.zip:src \
-		verapdf-cli-1.29.0.jar:ext 
+		verapdf-cli-1.29.0.jar:ext
 JAVA_USES=	java
 JAVA_VARS=	JAVA_VERSION=17+ NO_SHLIB_REQUIRES_GLOB=libjawt.so
 

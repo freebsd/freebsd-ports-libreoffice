@@ -109,6 +109,17 @@
                                                                          IFS=$save_IFS
                                      if test -z "$i"; then
                  continue
+@@ -41813,8 +41818,8 @@ ac_compiler_gnu=$ac_cv_cxx_compiler_gnu
+     BOX2D_VERSION=`$PKG_CONFIG --modversion box2d 2>/dev/null`
+     BOX2D_MAJOR=`echo $BOX2D_VERSION | cut -d"." -f1`
+     BOX2D_MINOR=`echo $BOX2D_VERSION | cut -d"." -f2`
+-    if test "$BOX2D_MAJOR" -eq "2"; then
+-        if test "$BOX2D_MINOR" -eq "4"; then
++    if test "$BOX2D_MAJOR" -eq "3"; then
++        if test "$BOX2D_MINOR" -eq "1"; then
+             _BOX2D_LIB=box2d
+             printf "%s\n" "#define BOX2D_HEADER <box2d/box2d.h>" >>confdefs.h
+ 
 @@ -47004,7 +47009,7 @@ printf "%s\n" "no (oss-fuzz)" >&6; }
  elif test "$enable_fuzzers" = "yes"; then
      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no (oss-fuzz)" >&5
