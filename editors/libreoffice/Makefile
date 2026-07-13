@@ -113,7 +113,7 @@ DISTFILES+=	afdko-4.0.3.tar.gz:src
 DISTFILES+=	antlr4-cpp-runtime-4.13.2-source.zip:src
 DISTFILES+=	dragonbox-1.1.3.tar.gz:src
 DISTFILES+=	phc-winner-argon2-20190702.tar.gz:src
-DISTFILES+=	skia-m142-f4ed99d2443962782cf5f8b4dd27179f131e7cbe.tar.xz:src
+DISTFILES+=	skia-m147-ad8ecedbfdef9f4ae4b1e73347b6dd56e6637d38.tar.xz:src
 DISTFILES+=	y-crdt-0.23.5.tar.gz:src
 DISTFILES+=	zxcvbn-c-2.6.tar.gz:src
 
@@ -212,7 +212,6 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		3bdf40c0d199af31923e900d082ca2dd-libfonts-1.1.6.zip:src \
 		8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip:src \
 		97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip:src \
-		a084cd548b586552cb7d3ee51f1af969-odfvalidator-1.1.8-incubating-SNAPSHOT-jar-with-dependencies.jar:ext \
 		ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip:src \
 		ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip:src \
 		d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip:src \
@@ -221,8 +220,10 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 		f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip:src \
 		Java-WebSocket-1.6.0.tar.gz:src \
 		bsh-2.1.1-src.zip:src \
-		officeotron-0.8.5.jar:ext \
-		rhino-1.7.15.1.zip:src
+		odfvalidator-0.13.0-jar-with-dependencies.jar:ext \
+		officeotron-0.8.8.jar:ext \
+		rhino-1.7.15.1.zip:src \
+		verapdf-cli-1.29.0.jar:ext 
 JAVA_USES=	java
 JAVA_VARS=	JAVA_VERSION=17+ NO_SHLIB_REQUIRES_GLOB=libjawt.so
 
@@ -246,7 +247,7 @@ MMEDIA_USES=		gstreamer
 MMEDIA_CONFIGURE_ENABLE=	gstreamer-1-0
 
 PDFIUM_CONFIGURE_ENABLE=	pdfium
-PDFIUM_DISTFILES=	pdfium-7471.tar.bz2:src
+PDFIUM_DISTFILES=	pdfium-7681.tar.bz2:src
 PDFIUM_LIB_DEPENDS=	libabsl_strings.so:devel/abseil \
 			libopenjp2.so:graphics/openjpeg
 
