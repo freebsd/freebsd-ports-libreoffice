@@ -1,6 +1,6 @@
 PORTNAME=	libixion
 DISTVERSION=	0.20.0
-PORTREVISION=	1
+PORTREVISION=	2
 CATEGORIES=	textproc
 #MASTER_SITES=	https://kohei.us/files/ixion/src/
 
@@ -32,7 +32,8 @@ PLIST_SUB=	VERSION=${DISTVERSION:R}
 
 CONFIGURE_ARGS=	--disable-python
 
-MDDS_VERSION=	3.1
+MDDS_VERSION=	${MDDS_API_VERSION}
+.include "${.CURDIR}/../../devel/mdds/Makefile.version"
 
 post-patch:
 	${REINPLACE_CMD} -e 's/mdds-3.0/mdds-${MDDS_VERSION}/' ${WRKSRC}/configure.ac
