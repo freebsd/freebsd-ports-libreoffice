@@ -1,5 +1,6 @@
 PORTNAME=	liborcus
 DISTVERSION=	0.21.0
+PORTREVISION=	1
 CATEGORIES=	devel misc
 #MASTER_SITES=	https://kohei.us/files/orcus/src/
 
@@ -40,7 +41,8 @@ STATIC_CONFIGURE_ENABLE=	static
 
 PLIST_SUB=	VERSION=${PORTVERSION:R}
 
-MDDS_VERSION=	3.1
+MDDS_VERSION=	${MDDS_API_VERSION}
+.include "${.CURDIR}/../../devel/mdds/Makefile.version"
 
 post-patch:
 	${REINPLACE_CMD} -e 's/mdds-3.0/mdds-${MDDS_VERSION}/' ${WRKSRC}/configure.ac
