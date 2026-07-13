@@ -1,11 +1,15 @@
 include/ZXing/Barcode.h
 include/ZXing/BarcodeFormat.h
+include/ZXing/BitMatrix.h
+include/ZXing/BitMatrixIO.h
 include/ZXing/CharacterSet.h
 include/ZXing/ContentType.h
 include/ZXing/CreateBarcode.h
 include/ZXing/Error.h
 include/ZXing/GTIN.h
 include/ZXing/ImageView.h
+include/ZXing/Matrix.h
+include/ZXing/MultiFormatWriter.h
 include/ZXing/Point.h
 include/ZXing/Quadrilateral.h
 include/ZXing/ReadBarcode.h
