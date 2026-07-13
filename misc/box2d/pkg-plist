@@ -10,3 +10,4 @@ lib/cmake/box2d/box2dConfigVersion.cmake
 lib/libbox2d.so
 lib/libbox2d.so.3
 lib/libbox2d.so.3.1.1
+libdata/pkgconfig/box2d.pc
