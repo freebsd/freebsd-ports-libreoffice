@@ -20,7 +20,7 @@ BUILD_DEPENDS=	p5-Archive-Zip>=0:archivers/p5-Archive-Zip \
 		cppunit-config:devel/cppunit \
 		dmake:devel/dmake \
 		gperf>=3.1:devel/gperf \
-		mdds>=${MDDS_VERSION}:devel/mdds \
+		mdds>=${MDDS_API_VERSION}:devel/mdds \
 		gpatch:devel/patch \
 		${LOCALBASE}/include/sane/sane.h:graphics/sane-backends \
 		vigra-config:graphics/vigra \
@@ -359,7 +359,7 @@ BINARY_ALIAS=	sed=gsed
 
 PIE_UNSAFE=	yes
 #MAKE_JOBS_UNSAFE=	yes
-MDDS_VERSION=	${MDDS_API_VERSION}
+
 .include "${.CURDIR}/../../devel/mdds/Makefile.version"
 
 .include <bsd.port.options.mk>
@@ -400,7 +400,7 @@ LDFLAGS+=	-Wl,--undefined-version
 post-patch:
 	${REINPLACE_CMD} \
 		-e 's|%%LOCALBASE%%|${LOCALBASE}|g' \
-		-e 's|mdds-3.0|mdds-${MDDS_VERSION}|g' \
+		-e 's|mdds-3.0|mdds-${MDDS_API_VERSION}|g' \
 		${WRKSRC}/configure
 .if ${COMPILER_FEATURES:Mlibstdc++}
 	${REINPLACE_CMD} -e 's/gb_CC/gb_CXX/' ${WRKSRC}/solenv/gbuild/platform/unxgcc.mk
