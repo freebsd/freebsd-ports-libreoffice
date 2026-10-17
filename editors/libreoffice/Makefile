@@ -144,13 +144,14 @@ ELF_FEATURES=	+wxneeded:instdir/program/soffice.bin
 OPTIONS_DEFINE=	COINMP CUPS DOCS GNOME GTK3 GTK4 JAVA LTO MMEDIA PDFIUM PGSQL MARIADB SDK TEST WEBDAV
 OPTIONS_RADIO=	QT KDE
 OPTIONS_RADIO_QT=	QT5 QT6
-OPTIONS_RADIO_KDE=	KF6
+OPTIONS_RADIO_KDE=	KF5 KF6
 OPTIONS_DEFAULT=	CUPS DOCS GTK3 JAVA MMEDIA PDFIUM QT6
 #OPTIONS_EXCLUDE=	GTK4
 
 COINMP_DESC=	Enable CoinMP (deprecated) math solver
 GTK4_DESC=	GTK+ 4 GUI toolkit support (experimental)
 JAVA_DESC=	Add Java support (XML filters, macros, DB connections)
+KF5_DESC=	KF5/Qt5 GUI toolkit support (implies QT5)
 KF6_DESC=	KF6/Qt6 GUI toolkit support (implies QT6)
 MMEDIA_DESC=	Enable multimedia backend for Impress
 PDFIUM_DESC=	Enable PDFium secure engine
@@ -226,12 +227,19 @@ JAVA_DISTFILES=	17410483b5b5f267aa18b7e00b65e6e0-hsqldb_1_8_0.zip:src \
 JAVA_USES=	java
 JAVA_VARS=	JAVA_VERSION=17+ NO_SHLIB_REQUIRES_GLOB=libjawt.so
 
+KF5_CONFIGURE_ENABLE=	kf5
+KF5_USE=	kde=config,coreaddons,i18n,kio,windowsystem
+KF5_USES=	kde:5
+KF5_IMPLIES=	QT5
+KF5_PREVENTS=	KF6
+KF5_PREVENTS_MSG=	KF5 cannot coexist with KF6
+
 KF6_CONFIGURE_ENABLE=	kf6
 KF6_USE=	kde=config,coreaddons,i18n,kio,windowsystem
 KF6_USES=	kde:6
 KF6_IMPLIES=	QT6
-#KF6_PREVENTS=	KF5
-#KF6_PREVENTS_MSG=	KF6 cannot coexist with KF5
+KF6_PREVENTS=	KF5
+KF6_PREVENTS_MSG=	KF6 cannot coexist with KF5
 
 LTO_CONFIGURE_ENABLE=	lto
 
@@ -258,8 +266,8 @@ QT5_USES=	qt:5
 
 QT6_CONFIGURE_ENABLE=	qt6
 QT6_CONFIGURE_ENV=	QMAKE6=${QMAKE} MOC6=${MOC} PATH="${QT_TOOLDIR}:${PATH}"
-#QT6_PREVENTS=	KF5
-#QT6_PREVENTS_MSG=	KF5 support require Qt5 engine
+QT6_PREVENTS=	KF5
+QT6_PREVENTS_MSG=	KF5 support require Qt5 engine
 QT6_USE=	qt=base,declarative,multimedia,tools:build
 QT6_USES=	qt:6
 
@@ -364,6 +372,15 @@ CONFIGURE_ARGS+=	--disable-skia
 
 .if ${PORT_OPTIONS:MGTK3} && ${PORT_OPTIONS:MKF5}
 CONFIGURE_ARGS+=	--enable-gtk3-kde5
+.endif
+
+.if ${PORT_OPTIONS:MLTO} && ${CHOSEN_COMPILER_TYPE} == clang && ${COMPILER_VERSION} < 130
+LLVM_DEFAULT=	13
+CPP=	${LOCALBASE}/bin/clang-cpp${LLVM_DEFAULT}
+CC=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}
+CXX=	${LOCALBASE}/bin/clang++${LLVM_DEFAULT}
+BUILD_DEPENDS+=	${LOCALBASE}/bin/clang${LLVM_DEFAULT}:devel/llvm${LLVM_DEFAULT}
+LLD_UNSAFE=	yes
 .endif
 
 .if ${CHOSEN_COMPILER_TYPE} == clang
